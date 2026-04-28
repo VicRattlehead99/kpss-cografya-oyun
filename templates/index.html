@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>KPSS Coğrafya Harita Oyunu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="theme-dark">
+<div id="app">
+
+  <div id="screen-start" class="screen active">
+    <div class="start-inner">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <div class="logo-badge">KPSS</div>
+      <h1>Türkiye Coğrafya<br>Harita Oyunu</h1>
+      <p class="subtitle">Haritaya tıklayarak tarım, maden,<br>göl ve dağları öğren.</p>
+      <div class="rules-box">
+        <div class="rule"><span class="rnum">1</span><span>Soruyu oku ve listedeki illerden <strong>herhangi birini</strong> haritada bul</span></div>
+        <div class="rule"><span class="rnum">2</span><span>Doğruysa yeşil yanar, sırasız şekilde tüm illeri bulabilirsin</span></div>
+        <div class="rule"><span class="rnum">3</span><span>Tüm illeri bulunca veya pes edince sonraki soruya geç</span></div>
+      </div>
+      <button class="btn-primary" onclick="showScreen('screen-konu')">Konu Seç ▶</button>
+    </div>
+  </div>
+
+  <div id="screen-konu" class="screen">
+    <div class="konu-inner">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <div class="logo-badge">KPSS</div>
+      <h2 style="margin-bottom:8px;">Hangi konuyu çalışmak istiyorsun?</h2>
+      <p class="subtitle" style="margin-bottom:24px;">Birden fazla seçebilirsin</p>
+      <div class="konu-grid" id="konu-grid">
+        </div>
+      <div class="konu-actions">
+        <button class="btn-secondary" onclick="showScreen('screen-start')">← Geri</button>
+        <button class="btn-primary" onclick="startGameWithKonu()">Başlat ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-game" class="screen">
+    <div class="topbar">
+      <div class="tb-stat"><div class="tb-label">Puan</div><div class="tb-val" id="tb-puan">0</div></div>
+      <div class="tb-mid" id="tb-qinfo">Soru 1 / 20</div>
+      <div class="tb-stat"><div class="tb-label">Hata</div><div class="tb-val red" id="tb-hata">0</div></div>
+      <button class="theme-btn-sm" onclick="toggleTheme()">🌙</button>
+    </div>
+    <div class="progress-bar-wrap"><div class="progress-bar"><div id="progress-fill" style="width:5%"></div></div></div>
+
+    <div class="game-body">
+      <div class="left-panel">
+        <div class="question-card">
+          <div class="q-cat" id="q-cat">Kategori</div>
+          <div class="q-text" id="q-text">Yükleniyor...</div>
+          <div class="q-hint">Listede olan illerden herhangi birine tıkla</div>
+        </div>
+        <div class="sira-list" id="sira-list"></div>
+        <div class="action-row">
+          <button class="btn-action btn-menu" onclick="anaMenuye()">🏠 Menü</button>
+          <button class="btn-action" id="btn-skip" onclick="skipSoru()">⏭ Geç</button>
+          <button class="btn-action" id="btn-reveal" onclick="revealSoru()">👁 Göster</button>
+          <button class="btn-action btn-next" id="btn-next" onclick="sonrakiSoru()" style="display:none">Sonraki ▶</button>
+        </div>
+        <div class="feedback-panel" id="feedback-panel"></div>
+        <div class="legend">
+          <div class="leg-item"><span class="leg-dot g3"></span>Bulunan İl (10p)</div>
+          <div class="leg-item"><span class="leg-dot blue"></span>Gösterilen İl</div>
+          <div class="leg-item"><span class="leg-dot red"></span>Yanlış İl</div>
+        </div>
+      </div>
+
+      <div class="map-panel">
+        <div class="map-wrap" id="map-wrap">
+          <svg id="turkey-svg" viewBox="0 0 1007.478 527.323"
+               xmlns="http://www.w3.org/2000/svg"
+               preserveAspectRatio="xMidYMid meet"></svg>
+          <div id="tooltip" class="tooltip"></div>
+          <div id="map-feedback" class="map-feedback"></div>
+        </div>
+        <div class="mob-bottom">
+          <div class="mob-q-card">
+            <div class="mob-q-cat" id="mob-q-cat">Kategori</div>
+            <div class="mob-q-text" id="mob-q-text">Yükleniyor...</div>
+          </div>
+          <div class="mob-sira-row" id="mob-sira-row"></div>
+          <div class="mob-actions">
+            <button class="btn-mob" onclick="anaMenuye()">🏠</button>
+            <button class="btn-mob" id="mob-btn-skip" onclick="skipSoru()">⏭ Geç</button>
+            <button class="btn-mob" id="mob-btn-reveal" onclick="revealSoru()">👁 Göster</button>
+            <button class="btn-mob btn-mob-next" id="mob-btn-next" onclick="sonrakiSoru()" style="display:none">Sonraki ▶</button>
+          </div>
+          <div class="mob-feedback" id="mob-feedback"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-result" class="screen">
+    <div class="result-inner">
+      <button class="theme-btn" onclick="toggleTheme()" style="position:absolute;top:16px;right:16px;">🌙</button>
+      <div class="res-emoji" id="res-emoji">🏆</div>
+      <h2 id="res-title">Tebrikler!</h2>
+      <div class="res-score" id="res-score">0</div>
+      <p class="res-msg" id="res-msg"></p>
+      <div class="res-stats">
+        <div class="rs-card"><div class="rs-val" id="rs-dogru">0</div><div class="rs-lbl">Soru</div></div>
+        <div class="rs-card"><div class="rs-val red" id="rs-hata">0</div><div class="rs-lbl">Hata</div></div>
+        <div class="rs-card"><div class="rs-val" id="rs-gecilen">0</div><div class="rs-lbl">Geçilen</div></div>
+      </div>
+      <div id="yanlis-bolum" style="display:none" class="yanlis-box">
+        <div class="yanlis-title">📚 Tekrar Çalışılacaklar</div>
+        <ul id="yanlis-list"></ul>
+      </div>
+      <div class="result-btns">
+        <button class="btn-secondary" onclick="anaMenuye()">🏠 Ana Menü</button>
+        <button class="btn-primary" onclick="restartGame()">Tekrar Oyna ▶</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="/static/js/il_svgpaths.js"></script>
+<script src="/static/js/il_centers.js"></script>
+<script src="/static/js/oyun.js"></script>
+</body>
+</html>
