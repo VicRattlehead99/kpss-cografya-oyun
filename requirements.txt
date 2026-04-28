@@ -1,2 +1,6 @@
 flask>=3.0.0
+<<<<<<< HEAD
 gunicorn
+=======
+gunicorn
+>>>>>>> 28918d8 (mobil düzeltmeleri)

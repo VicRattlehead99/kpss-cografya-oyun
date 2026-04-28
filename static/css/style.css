@@ -111,9 +111,10 @@ body {
 /* ============ BAŞLANGIÇ ============ */
 #screen-start {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
+  overflow-y: auto;
   position: relative;
   padding: 20px;
 }
@@ -123,6 +124,7 @@ body {
   text-align: center;
   padding: 32px 0;
   position: relative;
+  margin: auto 0;
 }
 .logo-badge {
   display: inline-block;
@@ -550,7 +552,7 @@ h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 900; margin-bottom: 6px; }
   #screen-game { height: auto; overflow: visible; }
   .game-body { flex-direction: column; overflow: visible; }
   .left-panel { display: none; } /* Sol panel mobilde gizli, mob-bottom gösterir */
-  .map-panel { height: 52vw; min-height: 200px; max-height: 320px; }
+  .map-panel { height: 58vw; min-height: 220px; max-height: 380px; }
   .map-wrap { flex: unset; height: 100%; }
 
   .mob-bottom {
@@ -635,6 +637,47 @@ h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 900; margin-bottom: 6px; }
   .il-label { font-size: 4px; }
 }
 
+/* ============ MOBİL YATAY MOD ============ */
+@media (max-width: 900px) and (orientation: landscape) {
+  body { overflow: auto; }
+  #screen-game { height: auto; overflow: visible; }
+  .game-body { flex-direction: row; overflow: visible; }
+  .left-panel { display: none; }
+  .map-panel {
+    height: 100vh;
+    min-height: unset;
+    max-height: unset;
+    flex: 1;
+    position: sticky;
+    top: 0;
+  }
+  .map-wrap { height: 100%; }
+  .mob-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    width: 220px;
+    flex-shrink: 0;
+    background: var(--bg2);
+    border-left: 1px solid var(--border);
+    overflow-y: auto;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  #screen-start,
+  #screen-konu,
+  #screen-result {
+    min-height: auto;
+    padding: 16px;
+    align-items: flex-start;
+  }
+  .start-inner,
+  .konu-inner,
+  .result-inner { margin: 0 auto; padding-top: 24px; }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
@@ -643,7 +686,7 @@ h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 900; margin-bottom: 6px; }
 /* ============ KONU SEÇİM EKRANI ============ */
 #screen-konu {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
   overflow-y: auto;
@@ -659,6 +702,7 @@ h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 900; margin-bottom: 6px; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: 0 8px 40px var(--shadow);
+  margin: auto 0;
 }
 .konu-grid {
   display: grid;
@@ -748,10 +792,13 @@ h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 900; margin-bottom: 6px; }
 /* ============ HARİTA LABEL DÜZELTMESİ ============ */
 /* SVG viewBox 1007x527 — label fontunu büyütüyoruz */
 .il-label {
-  font-size: 9px !important;
+  font-size: 8px !important;
   fill: var(--text) !important;
-  font-weight: 800 !important;
-  opacity: 0.75;
+  font-weight: 700 !important;
+  opacity: 0.7;
+  pointer-events: none;
+  dominant-baseline: middle;
+  text-anchor: middle;
 }
 
 /* Tooltip da büyük ve net olsun */
@@ -776,5 +823,5 @@ h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 900; margin-bottom: 6px; }
 @media (max-width: 600px) {
   .konu-grid { grid-template-columns: repeat(2, 1fr); }
   .konu-inner { padding: 48px 16px 28px; }
-  .il-label { font-size: 5px !important; }
+  .il-label { font-size: 4px !important; opacity: 0.6; }
 }
