@@ -634,48 +634,70 @@ h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 900; margin-bottom: 6px; }
   .tb-val { font-size: 18px; }
   .tb-mid { font-size: 12px; }
 
-  .il-label { font-size: 6px; }
+  .il-label { font-size: 4px; }
 }
 
 /* ============ MOBİL YATAY MOD ============ */
 @media (max-width: 900px) and (orientation: landscape) {
-  body { overflow: auto; }
-  #screen-game { height: auto; overflow: visible; }
-  .game-body { flex-direction: row; overflow: visible; }
+  body { overflow: hidden; }
+  #screen-game {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .game-body {
+    flex-direction: row;
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+  }
   .left-panel { display: none; }
   .map-panel {
-    height: 100vh;
-    min-height: unset;
-    max-height: unset;
     flex: 1;
-    position: sticky;
-    top: 0;
+    height: 100%;
+    min-height: 0;
+    max-height: unset;
+    display: flex;
+    flex-direction: column;
   }
-  .map-wrap { height: 100%; }
+  .map-wrap {
+    flex: 1;
+    height: 100%;
+    min-height: 0;
+    position: relative;
+  }
+  #turkey-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
   .mob-bottom {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 10px;
-    width: 220px;
+    gap: 6px;
+    padding: 8px;
+    width: 200px;
     flex-shrink: 0;
     background: var(--bg2);
     border-left: 1px solid var(--border);
     overflow-y: auto;
-    height: 100vh;
-    position: sticky;
-    top: 0;
+    height: 100%;
   }
+  .mob-q-text { font-size: 13px; }
+  .mob-actions { gap: 4px; }
+  .btn-mob { padding: 8px 6px; font-size: 12px; }
   #screen-start,
   #screen-konu,
   #screen-result {
-    min-height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
     padding: 16px;
     align-items: flex-start;
   }
   .start-inner,
   .konu-inner,
-  .result-inner { margin: 0 auto; padding-top: 24px; }
+  .result-inner { margin: 0 auto; padding-top: 16px; }
 }
 
 /* Scrollbar */
@@ -792,7 +814,7 @@ h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 900; margin-bottom: 6px; }
 /* ============ HARİTA LABEL DÜZELTMESİ ============ */
 /* SVG viewBox 1007x527 — label fontunu büyütüyoruz */
 .il-label {
-  font-size: 10px !important;
+  font-size: 8px !important;
   fill: var(--text) !important;
   font-weight: 700 !important;
   opacity: 0.7;
