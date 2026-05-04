@@ -111,8 +111,13 @@ const TUM_SORULAR = [
   { soru: "Rüzgar Gücü Santralleri", kategori: "Enerji", iller: ["İzmir", "Balıkesir", "Manisa", "Mersin", "Hatay", "Kayseri"] },
 
   // --- HAYVANCILIK ---
-  { soru: "Tiftik Keçisi Yetiştiriciliği", kategori: "Hayvancılık", iller: ["Ankara"] },
-  { soru: "Arıcılık", kategori: "Hayvancılık", iller: ["Ordu", "Muğla", "Adana"] },
+  { soru: "Tiftik Keçisi", kategori: "Hayvancılık", iller: ["Ankara"] },
+  { soru: "Sığır", kategori: "Hayvancılık", iller: ["Konya", "İzmir", "Erzurum", "Ankara", "Balıkesir"] },
+  { soru: "Manda", kategori: "Hayvancılık", iller: ["Samsun", "Diyarbakır", "İstanbul", "Kayseri", "Bitlis"] },
+  { soru: "Koyun", kategori: "Hayvancılık", iller: ["Van", "Konya", "Şanlıurfa", "Diyarbakır", "Ankara"] },
+  { soru: "Kıl Keçisi", kategori: "Hayvancılık", iller: ["Mersin", "Antalya", "Siirt", "Şırnak", "Mardin"] },
+  { soru: "Kümes Hayvancılığı (Tavuk)", kategori: "Hayvancılık", iller: ["Manisa", "Bolu", "Sakarya", "Mersin", "Balıkesir"] },
+  { soru: "Arıcılık", kategori: "Hayvancılık", iller: ["Ordu", "Adana", "Muğla", "Sivas"] },
   { soru: "İpek Böcekçiliği", kategori: "Hayvancılık", iller: ["Diyarbakır", "Antalya"] },
 
   // --- DAĞLAR ---
