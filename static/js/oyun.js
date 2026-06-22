@@ -117,13 +117,18 @@ const TUM_SORULAR = [
 
   // --- ENERJİ ---
   { soru: "Asfaltit", kategori: "Enerji", iller: ["Şırnak"] },
-  { soru: "Doğal Gaz Tesisleri", kategori: "Enerji", iller: ["Mardin", "Düzce"] },
-  { soru: "Güneş Santrali", kategori: "Enerji", iller: ["Konya", "Denizli", "Kayseri", "Mersin", "Antalya"] },
-  { soru: "Jeotermal Santraller", kategori: "Enerji", iller: ["Aydın", "Denizli", "Manisa"] },
-  { soru: "Taş Kömürü Çıkarımı", kategori: "Enerji", iller: ["Zonguldak", "Bartın", "Kastamonu"] },
-  { soru: "Linyit Kömürü Çıkarımı", kategori: "Enerji", iller: ["Kahramanmaraş", "Ankara", "Çanakkale", "Muğla", "Manisa"] },
-  { soru: "Petrol Çıkarımı", kategori: "Enerji", iller: ["Batman", "Siirt", "Şırnak", "Diyarbakır", "Mardin", "Kırklareli"] },
-  { soru: "Rüzgar Gücü Santralleri", kategori: "Enerji", iller: ["İzmir", "Balıkesir", "Manisa", "Mersin", "Hatay", "Kayseri"] },
+  { soru: "Doğal Gaz Santralleri", kategori: "Enerji", iller: ["Kırklareli ", "İstanbul", "Bursa", "Balıkesir", "İzmir"] },
+  { soru: "Doğal Gaz Yatağı", kategori: "Enerji", iller: ["Mardin","Kırklareli","Düzce"] },
+  { soru: "Güneş Santrali", kategori: "Enerji", iller: ["Konya","Şanlıurfa", "Denizli", "Kayseri", "Mersin", "Antalya"] },
+  { soru: "Jeotermal Santraller", kategori: "Enerji", iller: ["Aydın", "Denizli", "Manisa", "Çanakkale"] },
+  { soru: "Taş Kömürü Santralleri", kategori: "Enerji", iller: ["Zonguldak", "Adana"] },
+  { soru: "Taş Kömürü Yatakları", kategori: "Enerji", iller: ["Zonguldak", "Bartın", "Kastamonu"] },
+  { soru: "Linyit Kömürü Santralleri", kategori: "Enerji", iller: ["Kahramanmaraş", "Ankara", "Çanakkale", "Muğla", "Manisa", "Kütahya", "Bursa"] },
+  { soru: "Linyit Kömürü Yatakları", kategori: "Enerji", iller: ["Kahramanmaraş", "Ankara", "Çanakkale", "Muğla", "Manisa", "Kütahya", "Bursa","Çorum","Amasya"]  },
+  { soru: "Petrol Rafinerileri", kategori: "Enerji", iller: ["Batman", "İzmir", "Mersin", "Kırıkkale"] },
+  { soru: "Petrol Yatakları", kategori: "Enerji", iller: ["Batman","Siirt","Diyarbakır","Şanlıurfa","Adıyaman"] },
+  { soru: "Rüzgar Gücü Santralleri", kategori: "Enerji", iller: ["İzmir", "Balıkesir", "Manisa", "Mersin", "Hatay", "Kayseri", "Çanakkale", "Aydın", "Afyon", "Amasya", "Kırşehir", "Mersin"] },
+  { soru: "Hidrolik Enerji", kategori: "Enerji", iller: ["Artvin","Elazığ","Diyarbakır","Samsun","Antalya"] },
 
   // --- HAYVANCILIK ---
   { soru: "Tiftik Keçisi", kategori: "Hayvancılık", iller: ["Ankara"] },
