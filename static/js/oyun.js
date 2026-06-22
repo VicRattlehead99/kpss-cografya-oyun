@@ -40,7 +40,10 @@ const KAT_BİLGİ = [
   { id: "Turizm", icon: "🎿", ad: "Turizm" },
   { id: "UNESCO", icon: "🏛️", ad: "UNESCO" },
   { id: "SinirKapilari", icon: "🛂", ad: "Sınır Kapıları" },
-  { id: "Barajlar", icon: "💧", ad: "Barajlar" }
+  { id: "Barajlar", icon: "💧", ad: "Barajlar" },
+  { id: "Magara", icon: "🦇", ad: "Mağaralar" },
+  { id: "Kanyon", icon: "🏞️", ad: "Kanyonlar" },
+  { id: "AntikKentler", icon: "🏛️", ad: "Antik Kentler" }
 ];
 
 const TUM_SORULAR = [
@@ -154,7 +157,6 @@ const TUM_SORULAR = [
   { soru: "Sündiken Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Eskişehir"] },
   { soru: "Canik Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Samsun", "Ordu"] },
   { soru: "Giresun Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Giresun", "Gümüşhane"] },
-  { soru: "Doğu Karadeniz Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Rize", "Artvin"] },
   { soru: "Karçal Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Artvin"] },
   { soru: "Yalnızçam Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Ardahan", "Artvin"] },
   { soru: "Allahuekber Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Erzurum", "Ardahan"] },
@@ -173,7 +175,6 @@ const TUM_SORULAR = [
   { soru: "Geyik Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Antalya", "Konya", "Karaman"] },
   { soru: "Dedegöl Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Isparta"] },
   { soru: "Sultan Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Afyon", "Isparta", "Konya"] },
-  { soru: "Güneydoğu Toroslar (Kıvrım)", kategori: "Dağlar", iller: ["Malatya", "Adıyaman", "Diyarbakır", "Siirt"] },
   { soru: "İhtiyarşahap Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Bitlis", "Van"] },
   { soru: "Hakkari Dağları (Kıvrım)", kategori: "Dağlar", iller: ["Hakkâri"] },
   { soru: "Kaz Dağları (Kırık)", kategori: "Dağlar", iller: ["Çanakkale", "Balıkesir"] },
@@ -186,9 +187,7 @@ const TUM_SORULAR = [
   // --- PLATOLAR ---
   { soru: "Teke Platosu (Karstik)", kategori: "Platolar", iller: ["Antalya"] },
   { soru: "Taşeli Platosu (Karstik)", kategori: "Platolar", iller: ["Mersin"] },
-  { soru: "Ardahan Yazılıkaya Platosu (Volkanik)", kategori: "Platolar", iller: ["Ardahan"] },
-  { soru: "Erzurum Kars Platoları (Volkanik)", kategori: "Platolar", iller: ["Erzurum", "Kars"] },
-  { soru: "Kırşehir Platosu (Volkanik)", kategori: "Platolar", iller: ["Kırşehir"] },
+  { soru: "Yazılıkaya Platosu (Volkanik)", kategori: "Platolar", iller: ["Ardahan"] },
   { soru: "Kapadokya Platosu (Volkanik)", kategori: "Platolar", iller: ["Nevşehir"] },
   { soru: "Çatalca Kocaeli Platosu (Aşınım Düzlüğü)", kategori: "Platolar", iller: ["İstanbul", "Kocaeli"] },
   { soru: "Perşembe Platosu (Aşınım Düzlüğü)", kategori: "Platolar", iller: ["Ordu"] },
@@ -198,18 +197,14 @@ const TUM_SORULAR = [
   { soru: "Obruk Platosu (Tabaka Düzlüğü)", kategori: "Platolar", iller: ["Konya"] },
   { soru: "Bozok Platosu (Tabaka Düzlüğü)", kategori: "Platolar", iller: ["Yozgat"] },
   { soru: "Uzunyayla Platosu (Tabaka Düzlüğü)", kategori: "Platolar", iller: ["Sivas", "Kayseri"] },
-  { soru: "Gaziantep Platosu (Tabaka Düzlüğü)", kategori: "Platolar", iller: ["Gaziantep"] },
-  { soru: "Şanlıurfa Platosu (Tabaka Düzlüğü)", kategori: "Platolar", iller: ["Şanlıurfa"] },
 
   // --- OVALAR ---
-  { soru: "Muğla Ovası (Karstik)", kategori: "Ovalar", iller: ["Muğla"] },
   { soru: "Acıpayam Ovası (Karstik)", kategori: "Ovalar", iller: ["Denizli"] },
   { soru: "Tefenni Ovası (Karstik)", kategori: "Ovalar", iller: ["Burdur"] },
   { soru: "Kestel Ovası (Karstik)", kategori: "Ovalar", iller: ["Burdur"] },
   { soru: "Elmalı Ovası (Karstik)", kategori: "Ovalar", iller: ["Antalya"] },
   { soru: "Bafra Ovası (Delta)", kategori: "Ovalar", iller: ["Samsun"] },
   { soru: "Çarşamba Ovası (Delta)", kategori: "Ovalar", iller: ["Samsun"] },
-  { soru: "Sakarya Ovası (Delta)", kategori: "Ovalar", iller: ["Sakarya"] },
   { soru: "Meriç Ovası (Delta)", kategori: "Ovalar", iller: ["Edirne"] },
   { soru: "Dikili Ovası (Delta)", kategori: "Ovalar", iller: ["İzmir"] },
   { soru: "Menemen Ovası (Delta)", kategori: "Ovalar", iller: ["İzmir"] },
@@ -219,22 +214,14 @@ const TUM_SORULAR = [
   { soru: "Çukurova (Delta)", kategori: "Ovalar", iller: ["Adana"] },
   { soru: "Asi Ovası (Delta)", kategori: "Ovalar", iller: ["Hatay"] },
   { soru: "Adapazarı Ovası (KAF Tektonik)", kategori: "Ovalar", iller: ["Sakarya"] },
-  { soru: "Bolu Düzce Ovası (KAF Tektonik)", kategori: "Ovalar", iller: ["Bolu", "Düzce"] },
   { soru: "Tosya Ovası (KAF Tektonik)", kategori: "Ovalar", iller: ["Kastamonu"] },
   { soru: "Merzifon Ovası (KAF Tektonik)", kategori: "Ovalar", iller: ["Amasya"] },
   { soru: "Suluova Taşova Ovası (KAF Tektonik)", kategori: "Ovalar", iller: ["Amasya"] },
-  { soru: "Amasya Ovası (KAF Tektonik)", kategori: "Ovalar", iller: ["Amasya"] },
   { soru: "Erbaa Ovası (KAF Tektonik)", kategori: "Ovalar", iller: ["Tokat"] },
   { soru: "Niksar Ovası (KAF Tektonik)", kategori: "Ovalar", iller: ["Tokat"] },
-  { soru: "Erzincan Ovası (KAF Tektonik)", kategori: "Ovalar", iller: ["Erzincan"] },
   { soru: "Tercan Ovası (KAF Tektonik)", kategori: "Ovalar", iller: ["Erzincan"] },
   { soru: "Amik Ovası (DAF Tektonik)", kategori: "Ovalar", iller: ["Hatay"] },
-  { soru: "Maraş Ovası (DAF Tektonik)", kategori: "Ovalar", iller: ["Kahramanmaraş"] },
   { soru: "Elbistan Ovası (DAF Tektonik)", kategori: "Ovalar", iller: ["Kahramanmaraş"] },
-  { soru: "Malatya Ovası (DAF Tektonik)", kategori: "Ovalar", iller: ["Malatya"] },
-  { soru: "Elazığ Ovası (DAF Tektonik)", kategori: "Ovalar", iller: ["Elazığ"] },
-  { soru: "Bingöl Ovası (DAF Tektonik)", kategori: "Ovalar", iller: ["Bingöl"] },
-  { soru: "Muş Ovası (DAF Tektonik)", kategori: "Ovalar", iller: ["Muş"] },
   { soru: "Bakırçay Ovası (BAF Tektonik)", kategori: "Ovalar", iller: ["İzmir"] },
   { soru: "Akhisar Ovası (BAF Tektonik)", kategori: "Ovalar", iller: ["Manisa"] },
   { soru: "Alaşehir Ovası (BAF Tektonik)", kategori: "Ovalar", iller: ["Manisa"] },
@@ -576,7 +563,84 @@ const TUM_SORULAR = [
   { soru: "Adıgüzel Barajı (Büyük Menderes)", kategori: "Barajlar", iller: ["Denizli"] },
   { soru: "Demirköprü Barajı (Gediz)", kategori: "Barajlar", iller: ["Manisa"] },
   { soru: "Oymapınar Barajı (Manavgat)", kategori: "Barajlar", iller: ["Antalya"] },
-  { soru: "Gezende Barajı (Göksu)", kategori: "Barajlar", iller: ["Mersin"] }
+  { soru: "Gezende Barajı (Göksu)", kategori: "Barajlar", iller: ["Mersin"] },
+
+  // --- MAĞARALAR ---
+  { soru: "Karain Mağarası", kategori: "Magara", iller: ["Antalya"] },
+  { soru: "Damlataş Mağarası", kategori: "Magara", iller: ["Antalya"] },
+  { soru: "Dim Mağarası", kategori: "Magara", iller: ["Antalya"] },
+  { soru: "Altınbeşik Mağarası", kategori: "Magara", iller: ["Antalya"] },
+  { soru: "Zeytintaşı Mağarası", kategori: "Magara", iller: ["Antalya"] },
+  { soru: "Ballıca Mağarası", kategori: "Magara", iller: ["Tokat"] },
+  { soru: "Dupnisa Mağarası", kategori: "Magara", iller: ["Kırklareli"] },
+  { soru: "Karaca Mağarası", kategori: "Magara", iller: ["Gümüşhane"] },
+  { soru: "İnsuyu Mağarası", kategori: "Magara", iller: ["Burdur"] },
+  { soru: "Gökköy Mağarası", kategori: "Magara", iller: ["Zonguldak"] },
+  { soru: "Oylat Mağarası", kategori: "Magara", iller: ["Bursa"] },
+  { soru: "Gilindire (Aynalıgöl) Mağarası", kategori: "Magara", iller: ["Mersin"] },
+  { soru: "Narlıkuyu (Üç Güzeller) Mağarası", kategori: "Magara", iller: ["Mersin"] },
+  { soru: "Astım Mağarası", kategori: "Magara", iller: ["Mersin"] },
+  { soru: "Derebucak Çamlık Mağaraları", kategori: "Magara", iller: ["Konya"] },
+  { soru: "Bulak (Mencilis) Mağarası", kategori: "Magara", iller: ["Karabük"] },
+  { soru: "Kaklık Mağarası", kategori: "Magara", iller: ["Denizli"] },
+  { soru: "Keloğlan Mağarası", kategori: "Magara", iller: ["Denizli"] },
+
+  // --- KANYONLAR ---
+  { soru: "Ihlara Vadisi", kategori: "Kanyon", iller: ["Aksaray"] },
+  { soru: "Saklıkent Kanyonu", kategori: "Kanyon", iller: ["Muğla", "Antalya"] },
+  { soru: "Köprülü Kanyon", kategori: "Kanyon", iller: ["Antalya"] },
+  { soru: "Güver Uçurumu", kategori: "Kanyon", iller: ["Antalya"] },
+  { soru: "Valla Kanyonu", kategori: "Kanyon", iller: ["Kastamonu"] },
+  { soru: "Horma Kanyonu", kategori: "Kanyon", iller: ["Kastamonu"] },
+  { soru: "Çatak Kanyonu", kategori: "Kanyon", iller: ["Kastamonu"] },
+  { soru: "Ulubey Kanyonu", kategori: "Kanyon", iller: ["Uşak"] },
+  { soru: "Şahinkaya Kanyonu", kategori: "Kanyon", iller: ["Samsun"] },
+  { soru: "Cehennem Deresi Kanyonu", kategori: "Kanyon", iller: ["Artvin"] },
+  { soru: "İncesu Kanyonu", kategori: "Kanyon", iller: ["Çorum"] },
+  { soru: "Karanlık Kanyon", kategori: "Kanyon", iller: ["Erzincan"] },
+  { soru: "Levent Vadisi", kategori: "Kanyon", iller: ["Malatya"] },
+  { soru: "Göksu Kanyonu", kategori: "Kanyon", iller: ["Mersin"] },
+
+  // --- ANTİK KENTLER ---
+  { soru: "Efes Antik Kenti", kategori: "AntikKentler", iller: ["İzmir"] },
+  { soru: "Bergama Antik Kenti", kategori: "AntikKentler", iller: ["İzmir"] },
+  { soru: "Teos Antik Kenti", kategori: "AntikKentler", iller: ["İzmir"] },
+  { soru: "Truva Antik Kenti", kategori: "AntikKentler", iller: ["Çanakkale"] },
+  { soru: "Assos Antik Kenti", kategori: "AntikKentler", iller: ["Çanakkale"] },
+  { soru: "Perge Antik Kenti", kategori: "AntikKentler", iller: ["Antalya"] },
+  { soru: "Termessos Antik Kenti", kategori: "AntikKentler", iller: ["Antalya"] },
+  { soru: "Aspendos Antik Kenti", kategori: "AntikKentler", iller: ["Antalya"] },
+  { soru: "Phaselis Antik Kenti", kategori: "AntikKentler", iller: ["Antalya"] },
+  { soru: "Olympos Antik Kenti", kategori: "AntikKentler", iller: ["Antalya"] },
+  { soru: "Patara Antik Kenti", kategori: "AntikKentler", iller: ["Antalya"] },
+  { soru: "Xanthos Antik Kenti", kategori: "AntikKentler", iller: ["Antalya"] },
+  { soru: "Myra Antik Kenti", kategori: "AntikKentler", iller: ["Antalya"] },
+  { soru: "Sardes Antik Kenti", kategori: "AntikKentler", iller: ["Manisa"] },
+  { soru: "Hierapolis Antik Kenti", kategori: "AntikKentler", iller: ["Denizli"] },
+  { soru: "Laodikeia Antik Kenti", kategori: "AntikKentler", iller: ["Denizli"] },
+  { soru: "Afrodisias Antik Kenti", kategori: "AntikKentler", iller: ["Aydın"] },
+  { soru: "Milet Antik Kenti", kategori: "AntikKentler", iller: ["Aydın"] },
+  { soru: "Didyma Antik Kenti", kategori: "AntikKentler", iller: ["Aydın"] },
+  { soru: "Priene Antik Kenti", kategori: "AntikKentler", iller: ["Aydın"] },
+  { soru: "Knidos Antik Kenti", kategori: "AntikKentler", iller: ["Muğla"] },
+  { soru: "Kaunos Antik Kenti", kategori: "AntikKentler", iller: ["Muğla"] },
+  { soru: "Stratonikeia Antik Kenti", kategori: "AntikKentler", iller: ["Muğla"] },
+  { soru: "Aizanoi Antik Kenti", kategori: "AntikKentler", iller: ["Kütahya"] },
+  { soru: "Gordion Antik Kenti", kategori: "AntikKentler", iller: ["Ankara"] },
+  { soru: "Pessinus Antik Kenti", kategori: "AntikKentler", iller: ["Eskişehir"] },
+  { soru: "Hattuşaş Antik Kenti", kategori: "AntikKentler", iller: ["Çorum"] },
+  { soru: "Alacahöyük Antik Kenti", kategori: "AntikKentler", iller: ["Çorum"] },
+  { soru: "Kültepe Antik Kenti", kategori: "AntikKentler", iller: ["Kayseri"] },
+  { soru: "Çatalhöyük Neolitik Kenti", kategori: "AntikKentler", iller: ["Konya"] },
+  { soru: "Göbeklitepe", kategori: "AntikKentler", iller: ["Şanlıurfa"] },
+  { soru: "Karahantepe", kategori: "AntikKentler", iller: ["Şanlıurfa"] },
+  { soru: "Arslantepe Höyüğü", kategori: "AntikKentler", iller: ["Malatya"] },
+  { soru: "Zeugma Antik Kenti", kategori: "AntikKentler", iller: ["Gaziantep"] },
+  { soru: "Anazarbus Antik Kenti", kategori: "AntikKentler", iller: ["Adana"] },
+  { soru: "Castabala Antik Kenti", kategori: "AntikKentler", iller: ["Osmaniye"] },
+  { soru: "Soloi Pompeipolis Antik Kenti", kategori: "AntikKentler", iller: ["Mersin"] },
+  { soru: "Dara Antik Kenti", kategori: "AntikKentler", iller: ["Mardin"] },
+  { soru: "Ani Arkeolojik Alanı", kategori: "AntikKentler", iller: ["Kars"] }
 ];
 
 // ============ UI BAŞLATMA ============
@@ -634,6 +698,22 @@ window.addEventListener('DOMContentLoaded', () => {
 // ============ ANA MENÜ ============
 function anaMenuye() {
   showScreen('screen-konu');
+}
+
+function hepsiniSec() {
+  document.getElementById('cb-karisik').checked = false;
+  document.querySelectorAll('.konu-card:not(.konu-karisik) input[type=checkbox]').forEach(cb => {
+    cb.checked = true;
+    cb.closest('.konu-card').classList.add('secili');
+  });
+  document.querySelector('.konu-karisik').classList.remove('secili');
+}
+
+function secimKaldir() {
+  document.querySelectorAll('.konu-card input[type=checkbox]').forEach(cb => {
+    cb.checked = false;
+    cb.closest('.konu-card').classList.remove('secili');
+  });
 }
 
 function startGameWithKonu() {

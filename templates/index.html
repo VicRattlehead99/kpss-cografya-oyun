@@ -32,8 +32,14 @@
       <button class="theme-btn" onclick="toggleTheme()">🌙</button>
       <h2 style="margin-bottom:4px;">Hangi konuyu çalışmak istiyorsun?</h2>
       <p class="subtitle" style="margin-bottom:10px;">Birden fazla seçebilirsin</p>
-      <div class="konu-grid" id="konu-grid">
+      <div class="konu-select-actions">
+        <button class="btn-sel-all" onclick="hepsiniSec()">&#x2705; Hepsini Seç</button>
+        <button class="btn-sel-none" onclick="secimKaldir()">&#x2B1C; Seçimi Kaldır</button>
+      </div>
+      <div class="konu-grid-wrap">
+        <div class="konu-grid" id="konu-grid">
         </div>
+      </div>
       <div class="konu-actions">
         <button class="btn-secondary" onclick="showScreen('screen-start')">← Geri</button>
         <button class="btn-primary" onclick="startGameWithKonu()">Başlat ▶</button>

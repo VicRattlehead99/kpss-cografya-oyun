@@ -673,11 +673,40 @@ h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 900; margin-bottom: 6px; }
   box-shadow: 0 8px 40px var(--shadow);
   margin: auto 0;
 }
+.konu-select-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.btn-sel-all, .btn-sel-none {
+  padding: 7px 16px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px solid var(--border2);
+  background: var(--bg3);
+  color: var(--text2);
+  transition: all .15s;
+}
+.btn-sel-all:hover { border-color: var(--green); color: var(--green); }
+.btn-sel-none:hover { border-color: var(--yellow); color: var(--yellow); }
+.konu-grid-wrap {
+  max-height: 380px;
+  overflow-y: auto;
+  margin: 0 0 24px;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border2) transparent;
+}
+.konu-grid-wrap::-webkit-scrollbar { width: 6px; }
+.konu-grid-wrap::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+.konu-grid-wrap::-webkit-scrollbar-track { background: transparent; }
 .konu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  margin: 0 0 24px;
 }
 .konu-card {
   display: flex;
