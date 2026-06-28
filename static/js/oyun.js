@@ -23,16 +23,16 @@ function applyTheme() {
 // ============ SORULAR VE VERİTABANI ============
 const KAT_BİLGİ = [
   { id: "Bitkiler", icon: "🌱", ad: "Bitkiler" },
+  { id: "Hayvancılık", icon: "🐄", ad: "Hayvancılık" },
   { id: "Madenler", icon: "⛏️", ad: "Madenler" },
   { id: "Enerji", icon: "⚡", ad: "Enerji" },
-  { id: "Hayvancılık", icon: "🐄", ad: "Hayvancılık" },
+  { id: "Sanayi", icon: "🏭", ad: "Sanayi" },
   { id: "Dağlar", icon: "⛰️", ad: "Dağlar" },
   { id: "Platolar", icon: "🏞️", ad: "Platolar" },
   { id: "Ovalar", icon: "🌾", ad: "Ovalar" },
   { id: "Göller", icon: "💧", ad: "Göller" },
   { id: "Akarsular", icon: "🌊", ad: "Akarsular" },
   { id: "Diğer", icon: "🌍", ad: "Diğer" },
-  { id: "Sanayi", icon: "🏭", ad: "Sanayi" },
   { id: "MilliParklar", icon: "🌲", ad: "Milli Parklar" },
   { id: "Ramsar", icon: "🦢", ad: "Ramsar Alanları" },
   { id: "Gecitler", icon: "🏔️", ad: "Geçitler" },
@@ -69,7 +69,6 @@ const TUM_SORULAR = [
   { soru: "Keten Üretimi", kategori: "Bitkiler", iller: ["Uşak", "Samsun", "İstanbul"] },
   { soru: "Kivi Üretimi", kategori: "Bitkiler", iller: ["Yalova", "Samsun", "Mersin", "Bursa", "Sakarya"] },
   { soru: "Mısır Üretimi", kategori: "Bitkiler", iller: ["Konya", "Şanlıurfa", "Adana", "Eskişehir", "Mardin"] },
-  { soru: "Muz Üretimi", kategori: "Bitkiler", iller: ["Antalya", "Mersin", "Adana"] },
   { soru: "Pamuk Üretimi", kategori: "Bitkiler", iller: ["Şanlıurfa", "Diyarbakır", "Aydın", "Hatay", "İzmir"] },
   { soru: "Patates Üretimi", kategori: "Bitkiler", iller: ["Kayseri", "Niğde", "Konya", "Afyon", "Sivas"] },
   { soru: "Seracılık", kategori: "Bitkiler", iller: ["Antalya", "Mersin", "Adana", "Muğla"] },
@@ -84,7 +83,7 @@ const TUM_SORULAR = [
   { soru: "Turunçgil (Mikroklima)", kategori: "Bitkiler", iller: ["Rize"] },
   { soru: "Zeytin (Mikroklima)", kategori: "Bitkiler", iller: ["Artvin"] },
   { soru: "Pamuk (Mikroklima)", kategori: "Bitkiler", iller: ["Iğdır"] },
-  { soru: "Aspir", kategori: "Bitkiler", iller: ["Kayseri", "Konya", "Isparta", "Aksaray"] },
+  { soru: "Aspir", kategori: "Bitkiler", iller: ["Kayseri", "Konya", "Isparta", "Aksaray","Nevşehir"] },
   { soru: "Kırmızı Mercimek", kategori: "Bitkiler", iller: ["Şanlıurfa"] },
   { soru: "Avokado", kategori: "Bitkiler", iller: ["Antalya", "Mersin"] },
   { soru: "Muz (Mikroklima)", kategori: "Bitkiler", iller: ["Antalya", "Mersin"] },
@@ -131,14 +130,14 @@ const TUM_SORULAR = [
   { soru: "Hidrolik Enerji", kategori: "Enerji", iller: ["Artvin","Elazığ","Diyarbakır","Samsun","Antalya"] },
 
   // --- HAYVANCILIK ---
-  { soru: "Tiftik Keçisi", kategori: "Hayvancılık", iller: ["Ankara"] },
+  { soru: "Tiftik Keçisi", kategori: "Hayvancılık", iller: ["Ankara","Siirt","Eskişehir","Mardin","Bolu"] },
   { soru: "Sığır", kategori: "Hayvancılık", iller: ["Konya", "İzmir", "Erzurum", "Ankara", "Balıkesir"] },
   { soru: "Manda", kategori: "Hayvancılık", iller: ["Samsun", "Diyarbakır", "İstanbul", "Kayseri", "Bitlis"] },
   { soru: "Koyun", kategori: "Hayvancılık", iller: ["Van", "Konya", "Şanlıurfa", "Diyarbakır", "Ankara"] },
   { soru: "Kıl Keçisi", kategori: "Hayvancılık", iller: ["Mersin", "Antalya", "Siirt", "Şırnak", "Mardin"] },
   { soru: "Kümes Hayvancılığı (Tavuk)", kategori: "Hayvancılık", iller: ["Manisa", "Bolu", "Sakarya", "Mersin", "Balıkesir"] },
-  { soru: "Arıcılık", kategori: "Hayvancılık", iller: ["Ordu", "Adana", "Muğla", "Sivas"] },
-  { soru: "İpek Böcekçiliği", kategori: "Hayvancılık", iller: ["Diyarbakır"] },
+  { soru: "Arıcılık", kategori: "Hayvancılık", iller: ["Ordu", "Adana", "Muğla", "Sivas", "Siirt"] },
+  { soru: "İpek Böcekçiliği", kategori: "Hayvancılık", iller: ["Diyarbakır","Batman","Muğla","Antalya","İzmir"] },
 
   // --- DAĞLAR ---
   { soru: "Kula (Volkanik Dağ)", kategori: "Dağlar", iller: ["Manisa"] },
@@ -905,7 +904,11 @@ function shuffle(arr) {
 function renderSoru() {
   if (soruIdx >= sorular.length) { endGame(); return; }
   const s = sorular[soruIdx];
-  bulunanlar = [];
+
+  // DEĞİŞİKLİK: Bulunanları boş dizi yapmak yerine,
+  // sorunun il sayısı kadar 'null' eleman içeren bir dizi yapıyoruz.
+  bulunanlar = Array(s.iller.length).fill(null);
+
   beklemede = false;
   resetAllIller();
   setSonrakiButon(false);
@@ -929,7 +932,9 @@ function renderSoru() {
 
 function renderSiraList() {
   const s = sorular[soruIdx];
-  const itemsHTML = Array.from({ length: s.iller.length }).map((_, i) => {
+
+  const itemsHTML = s.iller.map((orijinalIl, i) => {
+    // bulunanlar[i] doluysa kullanıcı doğru sırayı tetiklemiştir
     const il = bulunanlar[i];
     const cls = il ? 'found' : '';
     const ilAdi = il ? il : '?';
@@ -941,7 +946,7 @@ function renderSiraList() {
     </div>`;
   }).join('');
 
-  const mobItemsHTML = Array.from({ length: s.iller.length }).map((_, i) => {
+  const mobItemsHTML = s.iller.map((orijinalIl, i) => {
     const il = bulunanlar[i];
     const cls = il ? 'found' : '';
     const ilAdi = il ? il : '?';
@@ -955,7 +960,6 @@ function renderSiraList() {
   document.getElementById('sira-list').innerHTML = itemsHTML;
   document.getElementById('mob-sira-row').innerHTML = mobItemsHTML;
 }
-
 function renderSiraListFull() {
   const s = sorular[soruIdx];
   const itemsHTML = s.iller.map(il => {
@@ -984,14 +988,21 @@ function renderSiraListFull() {
 }
 
 // ============ İL TIKLAMA ============
+// ============ İL TIKLAMA ============
 function ilTiklandi(iladi) {
   if (beklemede) return;
   const s = sorular[soruIdx];
-  if (soruIdx >= sorular.length || bulunanlar.length >= s.iller.length) return;
+  if (soruIdx >= sorular.length) return; // Eleman kontrolü renderSiraList'e taşındığı için sınırı kaldırdık
+
+  // DEĞİŞİKLİK: Zaten bulunup bulunmadığını dizide arayarak kontrol ediyoruz
   if (bulunanlar.includes(iladi)) { showFeedback(`✨ ${iladi} zaten bulundu!`, 'info'); return; }
 
   if (s.iller.includes(iladi)) {
-    bulunanlar.push(iladi);
+    // DEĞİŞİKLİK: İlin senin yazdığın dizideki orijinal indeksini buluyoruz
+    const idx = s.iller.indexOf(iladi);
+    // Tam o sıraya yerleştiriyoruz (Böylece üretim sırasındaki yeri korunuyor)
+    bulunanlar[idx] = iladi;
+
     setIlClass(iladi, 'il-correct-3'); // Standart yeşil renk
     const kazanilan = 10;
     puan += kazanilan;
@@ -999,7 +1010,8 @@ function ilTiklandi(iladi) {
     showMapFeedback(`✅ Doğru! ${iladi} (+${kazanilan}p)`, 'ok');
     renderSiraList();
 
-    if (bulunanlar.length === s.iller.length) {
+    // DEĞİŞİKLİK: Tüm illerin bulunma kontrolünü 'null' eleman kalmaması üzerinden yapıyoruz
+    if (!bulunanlar.includes(null)) {
       showFeedback('Harika! İlgili tüm iller bulundu! 🎉', 'ok');
       beklemede = true;
       setSonrakiButon(true);
@@ -1012,7 +1024,6 @@ function ilTiklandi(iladi) {
     showFeedback(`Yanlış! ${iladi} bu cevabın içinde yer almıyor.`, 'err');
   }
 }
-
 function updateScores() {
   document.getElementById('tb-puan').textContent = puan;
   document.getElementById('tb-hata').textContent = hata;
