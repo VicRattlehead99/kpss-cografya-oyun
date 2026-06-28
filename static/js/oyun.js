@@ -77,7 +77,7 @@ const TUM_SORULAR = [
   { soru: "Şeker Pancarı Üretimi", kategori: "Bitkiler", iller: ["Konya"] },
   { soru: "Turunçgiller (Narenciye) Üretimi", kategori: "Bitkiler", iller: ["Adana", "Mersin", "Antalya"] },
   { soru: "Tütün Üretimi", kategori: "Bitkiler", iller: ["Denizli", "Adıyaman", "Manisa", "Uşak", "Batman"] },
-  { soru: "Üzüm Üretimi", kategori: "Bitkiler", iller: ["Manisa", "Mersin", "Denizli"] },
+  { soru: "Üzüm Üretimi", kategori: "Bitkiler", iller: ["Manisa", "Mersin", "Denizli", "Gaziantep", "Mardin"] },
   { soru: "Yer Fıstığı Üretimi", kategori: "Bitkiler", iller: ["Adana", "Osmaniye", "Şırnak"] },
   { soru: "Zeytin Üretimi", kategori: "Bitkiler", iller: ["Aydın", "İzmir", "Manisa", "Mersin", "Hatay"] },
   { soru: "Turunçgil (Mikroklima)", kategori: "Bitkiler", iller: ["Rize"] },
