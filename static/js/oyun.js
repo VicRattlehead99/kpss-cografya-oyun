@@ -1115,3 +1115,40 @@ function clearFeedback() {
     el.className = el.id === 'feedback-panel' ? 'feedback-panel' : 'mob-feedback';
   });
 }
+
+// ============ SORUYU TEKRARLA ============
+function soruyuTekrarla() {
+  if (sorular.length === 0 || soruIdx >= sorular.length) return;
+
+  // Hile Önleme: Kullanıcının bu soruda bildiği il sayısını bulalım
+  // (null olmayan elemanlar kullanıcının doğru bildiği illerdir)
+  const bilinenIlSayisi = bulunanlar.filter(il => il !== null).length;
+
+  // Bu sorudan kazanılan toplam puanı hesapla (Her doğru il 10 puan)
+  const buSorudanGelenPuan = bilinenIlSayisi * 10;
+
+  // Kullanıcının toplam puanından bu sorunun puanını düş (0'ın altına inmesin)
+  puan = Math.max(0, puan - buSorudanGelenPuan);
+
+  // Skor tabelasını (arayüzü) yeni puana göre güncelle
+  updateScores();
+
+  // Haritadaki tüm renklendirmeleri ve sınıfları temizle
+  resetAllIller();
+
+  // Bu soru için bulunanlar listesini temizle (null ile doldur)
+  const s = sorular[soruIdx];
+  bulunanlar = Array(s.iller.length).fill(null);
+
+  // Oyun durumunu tekrar aktif et
+  beklemede = false;
+
+  // "Geç / Sonraki" butonlarını tekrar gizle
+  setSonrakiButon(false);
+
+  // Sağdaki ve mobildeki soru işaretli listeleri baştan oluştur
+  renderSiraList();
+
+  // Kullanıcıya bilgi mesajı ver
+  showFeedback("Soru ve bu sorudan kazandığınız puan sıfırlandı! 🎯", "info");
+}
