@@ -757,13 +757,6 @@ let puan = 0, hata = 0, gecilen = 0;
 let bulunanlar = [], yanlisSorular = [];
 let beklemede = false;
 
-// ============ MADEN MODU ============
-// Madenler kategorisinde soru tersinedir:
-// İller haritada gösterilir, kullanıcı madeni seçeneklerden tahmin eder.
-function isMadenModu(s) {
-  return s && s.kategori === 'Madenler';
-}
-
 // ============ HARİTA ============
 const SVG_NS = 'http://www.w3.org/2000/svg';
 let svgEl, tooltipEl, mapFbEl;
@@ -894,7 +887,6 @@ function setSonrakiButon(goster) {
 }
 
 function sonrakiSoru() {
-  hideMadenSecenekler();
   beklemede = false;
   soruIdx++;
   setSonrakiButon(false);
@@ -919,6 +911,8 @@ function renderSoru() {
   if (soruIdx >= sorular.length) { endGame(); return; }
   const s = sorular[soruIdx];
 
+  // DEĞİŞİKLİK: Bulunanları boş dizi yapmak yerine,
+  // sorunun il sayısı kadar 'null' eleman içeren bir dizi yapıyoruz.
   bulunanlar = Array(s.iller.length).fill(null);
 
   beklemede = false;
@@ -928,134 +922,18 @@ function renderSoru() {
   const iconInfo = KAT_BİLGİ.find(k => k.id === s.kategori);
   const title = iconInfo ? `${iconInfo.icon} ${s.kategori}` : s.kategori;
 
+  document.getElementById('q-cat').textContent = title;
+  document.getElementById('q-text').textContent = s.soru;
+  document.getElementById('mob-q-cat').textContent = title;
+  document.getElementById('mob-q-text').textContent = s.soru;
+
   const pct = (soruIdx / sorular.length * 100).toFixed(0);
   document.getElementById('progress-fill').style.width = pct + '%';
   document.getElementById('tb-qinfo').textContent = `Soru ${soruIdx + 1} / ${sorular.length}`;
 
+  renderSiraList();
   clearFeedback();
   if (mapFbEl) mapFbEl.className = 'map-feedback';
-
-  if (isMadenModu(s)) {
-    // MADEN MODU: İlleri haritada göster, madeni tahmin ettir
-    document.getElementById('q-cat').textContent = title;
-    document.getElementById('q-text').textContent = 'Haritada gösterilen iller hangi madene ait?';
-    document.getElementById('mob-q-cat').textContent = title;
-    document.getElementById('mob-q-text').textContent = 'Haritada gösterilen iller hangi madene ait?';
-
-    // Tüm doğru illeri haritada göster
-    s.iller.forEach(il => setIlClass(il, 'il-revealed'));
-    // bulunanları dolu say (il tıklaması devre dışı)
-    bulunanlar = [...s.iller];
-
-    renderSiraList();
-    renderMadenSecenekler(s);
-  } else {
-    document.getElementById('q-cat').textContent = title;
-    document.getElementById('q-text').textContent = s.soru;
-    document.getElementById('mob-q-cat').textContent = title;
-    document.getElementById('mob-q-text').textContent = s.soru;
-
-    // Maden seçenek panelini gizle
-    hideMadenSecenekler();
-    renderSiraList();
-  }
-}
-
-// ============ MADEN SEÇENEK PANELİ ============
-// Madenler kategorisindeki tüm benzersiz soru adlarını seçenek olarak sun
-function getMadenSecenekler(dogruSoru) {
-  const tumMadenler = [...new Set(TUM_SORULAR
-    .filter(s => s.kategori === 'Madenler')
-    .map(s => s.soru))];
-
-  // Doğru cevabı dahil et, karıştır, max 5 seçenek sun
-  const yanlis = shuffle(tumMadenler.filter(m => m !== dogruSoru.soru));
-  const secenekler = shuffle([dogruSoru.soru, ...yanlis.slice(0, 4)]);
-  return secenekler;
-}
-
-function renderMadenSecenekler(s) {
-  const secenekler = getMadenSecenekler(s);
-
-  const html = `
-    <div class="maden-secenekler" id="maden-secenekler">
-      <div class="maden-sec-baslik">⛏️ Bu iller hangi madene ait?</div>
-      <div class="maden-sec-grid">
-        ${secenekler.map(opt => `
-          <button class="maden-sec-btn" onclick="madenTahmin('${opt.replace(/'/g, "\\'")}')">${opt}</button>
-        `).join('')}
-      </div>
-    </div>
-  `;
-
-  // Sol panele ekle (sira-list'in altına)
-  let panel = document.getElementById('maden-secenekler');
-  if (panel) panel.remove();
-
-  const siraList = document.getElementById('sira-list');
-  siraList.innerHTML = ''; // maden modunda il listesi gösterme
-  siraList.insertAdjacentHTML('afterend', html);
-
-  // Mobil için de göster
-  let mobPanel = document.getElementById('mob-maden-secenekler');
-  if (mobPanel) mobPanel.remove();
-
-  const mobSira = document.getElementById('mob-sira-row');
-  mobSira.innerHTML = '';
-  mobSira.insertAdjacentHTML('afterend', `
-    <div class="maden-secenekler" id="mob-maden-secenekler" style="padding:8px;">
-      <div class="maden-sec-baslik" style="font-size:12px;">⛏️ Hangi maden?</div>
-      <div class="maden-sec-grid" style="grid-template-columns:1fr 1fr;">
-        ${secenekler.map(opt => `
-          <button class="maden-sec-btn" style="font-size:11px;padding:6px 4px;" onclick="madenTahmin('${opt.replace(/'/g, "\\'")}')">${opt}</button>
-        `).join('')}
-      </div>
-    </div>
-  `);
-}
-
-function hideMadenSecenekler() {
-  ['maden-secenekler', 'mob-maden-secenekler'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.remove();
-  });
-}
-
-function madenTahmin(secilen) {
-  if (beklemede) return;
-  const s = sorular[soruIdx];
-
-  if (secilen === s.soru) {
-    // Doğru!
-    puan += 10;
-    updateScores();
-    showMapFeedback('✅ Doğru! +10p', 'ok');
-    showFeedback(`Tebrikler! Doğru cevap: ${s.soru}`, 'ok');
-
-    // Butonları renklendir
-    document.querySelectorAll('.maden-sec-btn').forEach(btn => {
-      if (btn.textContent === s.soru) btn.classList.add('maden-dogru');
-      btn.disabled = true;
-    });
-
-    beklemede = true;
-    setSonrakiButon(true);
-  } else {
-    // Yanlış!
-    hata++;
-    updateScores();
-    showMapFeedback('❌ Yanlış!', 'err');
-    showFeedback(`Yanlış! "${secilen}" değil. Tekrar dene.`, 'err');
-    if (!yanlisSorular.includes(s.soru)) yanlisSorular.push(s.soru);
-
-    // Yanlış butonu işaretle
-    document.querySelectorAll('.maden-sec-btn').forEach(btn => {
-      if (btn.textContent === secilen) {
-        btn.classList.add('maden-yanlis');
-        btn.disabled = true;
-      }
-    });
-  }
 }
 
 function renderSiraList() {
@@ -1120,13 +998,7 @@ function renderSiraListFull() {
 function ilTiklandi(iladi) {
   if (beklemede) return;
   const s = sorular[soruIdx];
-  if (soruIdx >= sorular.length) return;
-
-  // Maden modunda harita tıklaması devre dışı
-  if (isMadenModu(s)) {
-    showFeedback('Soldaki seçeneklerden madeni tahmin et!', 'info');
-    return;
-  }
+  if (soruIdx >= sorular.length) return; // Eleman kontrolü renderSiraList'e taşındığı için sınırı kaldırdık
 
   // DEĞİŞİKLİK: Zaten bulunup bulunmadığını dizide arayarak kontrol ediyoruz
   if (bulunanlar.includes(iladi)) { showFeedback(`✨ ${iladi} zaten bulundu!`, 'info'); return; }
@@ -1180,20 +1052,9 @@ function revealSoru() {
   if (beklemede) return;
   const s = sorular[soruIdx];
   if (!yanlisSorular.includes(s.soru)) yanlisSorular.push(s.soru);
-
-  if (isMadenModu(s)) {
-    // Maden modunda doğru cevabı göster
-    document.querySelectorAll('.maden-sec-btn').forEach(btn => {
-      if (btn.textContent === s.soru) btn.classList.add('maden-dogru');
-      btn.disabled = true;
-    });
-    showMapFeedback('Cevap gösterildi 👀', 'info');
-    showFeedback(`Doğru cevap: ${s.soru}`, 'info');
-  } else {
-    revealCevaplar();
-    showMapFeedback('Cevaplar gösterildi 👀', 'info');
-    showFeedback('Cevaplar gösterildi. İnceleyip Sonraki butonuna bas.', 'info');
-  }
+  revealCevaplar();
+  showMapFeedback('Cevaplar gösterildi 👀', 'info');
+  showFeedback('Cevaplar gösterildi. İnceleyip Sonraki butonuna bas.', 'info');
   beklemede = true;
   setSonrakiButon(true);
 }
@@ -1265,31 +1126,35 @@ function clearFeedback() {
 function soruyuTekrarla() {
   if (sorular.length === 0 || soruIdx >= sorular.length) return;
 
-  const s = sorular[soruIdx];
-
-  if (isMadenModu(s)) {
-    // Maden modunda: puandan 10 düş (eğer doğru bulmuşsa)
-    // beklemede sadece doğru cevaplandıysa true olur
-    if (beklemede) {
-      puan = Math.max(0, puan - 10);
-      updateScores();
-    }
-    beklemede = false;
-    setSonrakiButon(false);
-    // Seçenek panelini yenile
-    renderMadenSecenekler(s);
-    showFeedback('Soru sıfırlandı! 🎯', 'info');
-    return;
-  }
-
+  // Hile Önleme: Kullanıcının bu soruda bildiği il sayısını bulalım
+  // (null olmayan elemanlar kullanıcının doğru bildiği illerdir)
   const bilinenIlSayisi = bulunanlar.filter(il => il !== null).length;
+
+  // Bu sorudan kazanılan toplam puanı hesapla (Her doğru il 10 puan)
   const buSorudanGelenPuan = bilinenIlSayisi * 10;
+
+  // Kullanıcının toplam puanından bu sorunun puanını düş (0'ın altına inmesin)
   puan = Math.max(0, puan - buSorudanGelenPuan);
+
+  // Skor tabelasını (arayüzü) yeni puana göre güncelle
   updateScores();
+
+  // Haritadaki tüm renklendirmeleri ve sınıfları temizle
   resetAllIller();
+
+  // Bu soru için bulunanlar listesini temizle (null ile doldur)
+  const s = sorular[soruIdx];
   bulunanlar = Array(s.iller.length).fill(null);
+
+  // Oyun durumunu tekrar aktif et
   beklemede = false;
+
+  // "Geç / Sonraki" butonlarını tekrar gizle
   setSonrakiButon(false);
+
+  // Sağdaki ve mobildeki soru işaretli listeleri baştan oluştur
   renderSiraList();
+
+  // Kullanıcıya bilgi mesajı ver
   showFeedback("Soru ve bu sorudan kazandığınız puan sıfırlandı! 🎯", "info");
 }
