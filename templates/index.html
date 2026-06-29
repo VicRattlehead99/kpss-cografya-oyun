@@ -74,6 +74,36 @@
 .theme-light .maden-sec-btn:hover:not(:disabled) {
   background: rgba(0,0,0,0.1);
 }
+
+/* ===== MOBİL MADEN MODU DÜZELTMESİ ===== */
+/* Harita paneli mobilde tam yükseklik — harita + altındaki alan scroll yapabilsin */
+@media (max-width: 768px) {
+  .map-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+    flex: 1 !important;
+  }
+  .mob-bottom {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex-shrink: 0 !important;
+    max-height: 55vh !important;
+    padding-bottom: env(safe-area-inset-bottom, 12px) !important;
+  }
+  /* Maden seçenek paneli mobilde tam genişlik */
+  #mob-maden-secenekler {
+    margin: 8px 8px 4px 8px !important;
+    border-radius: 10px;
+  }
+  #mob-maden-secenekler .maden-sec-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  #mob-maden-secenekler .maden-sec-btn {
+    font-size: 11px !important;
+    padding: 10px 6px !important;
+  }
+}
 </style>
 </head>
 <body class="theme-dark">

@@ -996,22 +996,28 @@ function renderMadenSecenekler(s) {
   siraList.innerHTML = ''; // maden modunda il listesi gösterme
   siraList.insertAdjacentHTML('afterend', html);
 
-  // Mobil için de göster
+  // Mobil için de göster — mob-actions'dan SONRA ekle
   let mobPanel = document.getElementById('mob-maden-secenekler');
   if (mobPanel) mobPanel.remove();
 
-  const mobSira = document.getElementById('mob-sira-row');
-  mobSira.innerHTML = '';
-  mobSira.insertAdjacentHTML('afterend', `
-    <div class="maden-secenekler" id="mob-maden-secenekler" style="padding:8px;">
-      <div class="maden-sec-baslik" style="font-size:12px;">⛏️ Hangi maden?</div>
-      <div class="maden-sec-grid" style="grid-template-columns:1fr 1fr;">
+  const mobActions = document.querySelector('.mob-actions');
+  const mobFeedback = document.getElementById('mob-feedback');
+  const mobSecHtml = `
+    <div class="maden-secenekler" id="mob-maden-secenekler">
+      <div class="maden-sec-baslik">⛏️ Hangi maden?</div>
+      <div class="maden-sec-grid">
         ${secenekler.map(opt => `
-          <button class="maden-sec-btn" style="font-size:11px;padding:6px 4px;" onclick="madenTahmin('${opt.replace(/'/g, "\\'")}')">${opt}</button>
+          <button class="maden-sec-btn" onclick="madenTahmin('${opt.replace(/'/g, "\\'")}')">${opt}</button>
         `).join('')}
       </div>
     </div>
-  `);
+  `;
+  // mob-feedback'ten önce, mob-actions'dan sonra ekle
+  if (mobFeedback) {
+    mobFeedback.insertAdjacentHTML('beforebegin', mobSecHtml);
+  } else if (mobActions) {
+    mobActions.insertAdjacentHTML('afterend', mobSecHtml);
+  }
 }
 
 function hideMadenSecenekler() {
