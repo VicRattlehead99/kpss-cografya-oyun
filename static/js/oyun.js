@@ -129,7 +129,7 @@ const TUM_SORULAR = [
 { soru: "Taş Kömürü Santralleri", kategori: "Enerji", iller: ["Zonguldak", "Adana"] },
 { soru: "Taş Kömürü Yatakları", kategori: "Enerji", iller: ["Zonguldak", "Bartın", "Kastamonu"] },
 { soru: "Linyit Kömürü Yatakları", kategori: "Enerji", iller: ["Kahramanmaraş", "Ankara", "Çanakkale", "Muğla", "Manisa", "Kütahya", "Bursa", "Çorum", "Amasya", "Sivas", "Erzurum"] },
-{ soru: "Petrol Rafinerileri", kategori: "Enerji", iller: ["Batman", "İzmir", "Kırıkkale", "Kocaeli"] },
+{ soru: "Petrol Rafinerileri", kategori: "Enerji", iller: ["Batman", "İzmir", "Kırıkkale", "Kocaeli", "Mersin"] },
 { soru: "Petrol Yatakları", kategori: "Enerji", iller: ["Batman", "Siirt", "Diyarbakır", "Şanlıurfa", "Adıyaman"] },
 { soru: "Rüzgar Gücü Santralleri", kategori: "Enerji", iller: ["İzmir", "Balıkesir", "Manisa", "Mersin", "Hatay", "Kayseri", "Çanakkale", "Aydın", "Afyon", "Amasya", "Kırşehir"] },
 { soru: "Hidrolik Enerji", kategori: "Enerji", iller: ["Artvin", "Elazığ", "Diyarbakır", "Samsun", "Antalya", "Şanlıurfa"] },
@@ -328,21 +328,12 @@ const TUM_SORULAR = [
   { soru: "Yayla-Güzle (Köy Altı)", kategori: "Diğer", iller: ["Rize", "Trabzon", "Artvin", "Antalya", "Mersin", "Adana"] },
   { soru: "Oba (Köy Altı)", kategori: "Diğer", iller: ["Antalya", "Mersin", "Adana"] },
   { soru: "Dalyan (Köy Altı)", kategori: "Diğer", iller: ["Muğla", "İzmir"] },
-  { soru: "Saros Körfezi", kategori: "Diğer", iller: ["Çanakkale"] },
   { soru: "Edremit Körfezi", kategori: "Diğer", iller: ["Balıkesir"] },
-  { soru: "Erdek Körfezi", kategori: "Diğer", iller: ["Balıkesir"] },
-  { soru: "Bandırma Körfezi", kategori: "Diğer", iller: ["Balıkesir"] },
-  { soru: "Gemlik Körfezi", kategori: "Diğer", iller: ["Bursa"] },
-  { soru: "İzmit Körfezi", kategori: "Diğer", iller: ["Kocaeli"] },
   { soru: "Çandarlı Körfezi", kategori: "Diğer", iller: ["İzmir"] },
-  { soru: "İzmir Körfezi", kategori: "Diğer", iller: ["İzmir"] },
   { soru: "Kuşadası Körfezi", kategori: "Diğer", iller: ["Aydın"] },
   { soru: "Güllük Körfezi", kategori: "Diğer", iller: ["Muğla"] },
   { soru: "Gökova Körfezi", kategori: "Diğer", iller: ["Muğla"] },
   { soru: "Hisarönü Körfezi", kategori: "Diğer", iller: ["Muğla"] },
-  { soru: "Fethiye Körfezi", kategori: "Diğer", iller: ["Muğla"] },
-  { soru: "Antalya Körfezi", kategori: "Diğer", iller: ["Antalya"] },
-  { soru: "İskenderun Körfezi", kategori: "Diğer", iller: ["Hatay"] },
 
   // --- SANAYİ ---
   { soru: "Tuğla - Kiremit Üretimi", kategori: "Sanayi", iller: ["Çorum", "Eskişehir", "Afyon", "Kütahya"] },
@@ -654,7 +645,6 @@ const TUM_SORULAR = [
   { soru: "Dara Antik Kenti", kategori: "AntikKentler", iller: ["Mardin"] },
   { soru: "Ani Arkeolojik Alanı", kategori: "AntikKentler", iller: ["Kars"] }
 ];
-
 // ============ UI BAŞLATMA ============
 window.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('konu-grid');
@@ -744,7 +734,7 @@ function startGameWithKonu() {
   }
   const filtrelenmis = TUM_SORULAR.filter(s => seciliKonular.includes(s.kategori));
   sorular = shuffle([...filtrelenmis]);
-  soruIdx = 0; puan = 0; hata = 0; gecilen = 0; yanlisSorular = []; strike = 0; soruBasiStrike = 0; soruKazanc = 0; soruHatasi = 0;
+  soruIdx = 0; puan = 0; hata = 0; gecilen = 0; yanlisSorular = [];
   beklemede = false;
   showScreen('screen-game');
   buildMap();
@@ -756,10 +746,6 @@ let sorular = [], soruIdx = 0;
 let puan = 0, hata = 0, gecilen = 0;
 let bulunanlar = [], yanlisSorular = [];
 let beklemede = false;
-let soruHatasi = 0; // Bu sorudan kaynaklanan toplam hata puanı (tekrarla'da resetlemek için)
-let strike = 0; // Art arda gelen doğru sayısı (sorular arası taşınır, yanlışta sıfırlanır)
-let soruBasiStrike = 0; // Bu soru başladığındaki strike değeri (tekrarla'da o değere dönmek için)
-let soruKazanc = 0; // Bu sorudan şu ana kadar kazanılan toplam puan (tekrarla'da geri almak için)
 
 // ============ MADEN MODU ============
 // Madenler kategorisinde soru tersinedir:
@@ -880,8 +866,6 @@ function setSonrakiButon(goster) {
   const revealBtn = document.getElementById('btn-reveal');
   const mobSkip = document.getElementById('mob-btn-skip');
   const mobReveal = document.getElementById('mob-btn-reveal');
-  const tekrarBtn = document.getElementById('btn-tekrar');
-  const mobTekrarBtn = document.getElementById('mob-btn-tekrar');
   if (goster) {
     if (btn) btn.style.display = '';
     if (mobBtn) mobBtn.style.display = '';
@@ -889,9 +873,6 @@ function setSonrakiButon(goster) {
     if (revealBtn) revealBtn.style.display = 'none';
     if (mobSkip) mobSkip.style.display = 'none';
     if (mobReveal) mobReveal.style.display = 'none';
-    // Soru tamamlandı: tekrar farmcılığını önlemek için Tekrar'ı devre dışı bırak
-    if (tekrarBtn) tekrarBtn.disabled = true;
-    if (mobTekrarBtn) mobTekrarBtn.disabled = true;
   } else {
     if (btn) btn.style.display = 'none';
     if (mobBtn) mobBtn.style.display = 'none';
@@ -899,8 +880,6 @@ function setSonrakiButon(goster) {
     if (revealBtn) revealBtn.style.display = '';
     if (mobSkip) mobSkip.style.display = '';
     if (mobReveal) mobReveal.style.display = '';
-    if (tekrarBtn) tekrarBtn.disabled = false;
-    if (mobTekrarBtn) mobTekrarBtn.disabled = false;
   }
 }
 
@@ -958,9 +937,6 @@ function renderSoru() {
   bulunanlar = Array(s.iller.length).fill(null);
 
   beklemede = false;
-  soruHatasi = 0;
-  soruBasiStrike = strike;
-  soruKazanc = 0;
   resetAllIller();
   setSonrakiButon(false);
 
@@ -1072,12 +1048,9 @@ function madenTahmin(secilen) {
 
   if (secilen === s.soru) {
     // Doğru!
-    strike = Math.min(5, strike + 1);
-    const kazanilan = 10 * strike;
-    puan += kazanilan;
-    soruKazanc += kazanilan;
+    puan += 10;
     updateScores();
-    showMapFeedback(strike > 1 ? `✅ Doğru! +${kazanilan}p (${strike}x Streak! 🔥)` : `✅ Doğru! +${kazanilan}p`, 'ok');
+    showMapFeedback('✅ Doğru! +10p', 'ok');
     showFeedback(`Tebrikler! Doğru cevap: ${s.soru}`, 'ok');
 
     // Butonları renklendir
@@ -1091,11 +1064,8 @@ function madenTahmin(secilen) {
   } else {
     // Yanlış!
     hata++;
-    puan = Math.max(0, puan - 10);
-    soruHatasi += 10;
-    strike = 0;
     updateScores();
-    showMapFeedback('❌ Yanlış! (-10p)', 'err');
+    showMapFeedback('❌ Yanlış!', 'err');
     showFeedback(`Yanlış! "${secilen}" değil. Tekrar dene.`, 'err');
     if (!yanlisSorular.includes(s.soru)) yanlisSorular.push(s.soru);
 
@@ -1189,12 +1159,10 @@ function ilTiklandi(iladi) {
     bulunanlar[idx] = iladi;
 
     setIlClass(iladi, 'il-correct-3'); // Standart yeşil renk
-    strike = Math.min(5, strike + 1);
-    const kazanilan = 10 * strike;
+    const kazanilan = 10;
     puan += kazanilan;
-    soruKazanc += kazanilan;
     updateScores();
-    showMapFeedback(strike > 1 ? `✅ Doğru! ${iladi} (+${kazanilan}p, ${strike}x Streak! 🔥)` : `✅ Doğru! ${iladi} (+${kazanilan}p)`, 'ok');
+    showMapFeedback(`✅ Doğru! ${iladi} (+${kazanilan}p)`, 'ok');
     renderSiraList();
 
     // DEĞİŞİKLİK: Tüm illerin bulunma kontrolünü 'null' eleman kalmaması üzerinden yapıyoruz
@@ -1205,12 +1173,9 @@ function ilTiklandi(iladi) {
     }
   } else {
     hata++;
-    puan = Math.max(0, puan - 10);
-    soruHatasi += 10;
-    strike = 0;
     updateScores();
     wrongAnim(iladi);
-    showMapFeedback(`❌ Yanlış İl (-10p)`, 'err');
+    showMapFeedback(`❌ Yanlış İl`, 'err');
     showFeedback(`Yanlış! ${iladi} bu cevabın içinde yer almıyor.`, 'err');
   }
 }
@@ -1225,7 +1190,6 @@ function skipSoru() {
   const s = sorular[soruIdx];
   if (!yanlisSorular.includes(s.soru)) yanlisSorular.push(s.soru);
   gecilen++;
-  strike = 0;
   revealCevaplar();
   showMapFeedback('Geçildi — Cevaplar gösterildi', 'info');
   showFeedback('Soru geçildi. Cevapları incele, sonra Sonraki butonuna bas.', 'info');
@@ -1239,32 +1203,16 @@ function revealSoru() {
   if (!yanlisSorular.includes(s.soru)) yanlisSorular.push(s.soru);
 
   if (isMadenModu(s)) {
-    // Maden modunda doğru cevabı göster — henüz bilinmediyse -10
-    const zatenDogruBilindi = document.querySelector('.maden-sec-btn.maden-dogru');
-    if (!zatenDogruBilindi) {
-      puan = Math.max(0, puan - 10);
-      soruHatasi += 10;
-      strike = 0;
-      updateScores();
-    }
+    // Maden modunda doğru cevabı göster
     document.querySelectorAll('.maden-sec-btn').forEach(btn => {
       if (btn.textContent === s.soru) btn.classList.add('maden-dogru');
       btn.disabled = true;
     });
-    showMapFeedback('Cevap gösterildi 👀 (-10p)', 'info');
+    showMapFeedback('Cevap gösterildi 👀', 'info');
     showFeedback(`Doğru cevap: ${s.soru}`, 'info');
   } else {
-    // Normal modda henüz bulunmamış il sayısı kadar -10
-    const bulunmamisSayisi = bulunanlar.filter(il => il === null).length;
-    if (bulunmamisSayisi > 0) {
-      const dusulecek = bulunmamisSayisi * 10;
-      puan = Math.max(0, puan - dusulecek);
-      soruHatasi += dusulecek;
-      strike = 0;
-      updateScores();
-    }
     revealCevaplar();
-    showMapFeedback(`Cevaplar gösterildi 👀 (-${bulunmamisSayisi * 10}p)`, 'info');
+    showMapFeedback('Cevaplar gösterildi 👀', 'info');
     showFeedback('Cevaplar gösterildi. İnceleyip Sonraki butonuna bas.', 'info');
   }
   beklemede = true;
@@ -1342,38 +1290,31 @@ function clearFeedback() {
 function soruyuTekrarla() {
   if (sorular.length === 0 || soruIdx >= sorular.length) return;
 
-  // Soru zaten tamamlanmışsa (doğru bilindi / gösterildi / geçildi) tekrar anlamsız —
-  // tekrar-tekrar basarak puan/strike manipüle etmeyi önlemek için engelle.
-  if (beklemede) {
-    showFeedback('Bu soru zaten tamamlandı, sıradaki soruya geç. ▶', 'info');
-    return;
-  }
-
   const s = sorular[soruIdx];
 
   if (isMadenModu(s)) {
-    // Bu sorudan şu ana kadarki NET etkiyi (kazanç - kayıp) tamamen geri al.
-    // Sayaçları sıfırlamıyoruz; soru bitene kadar kümülatif kalmalı, yoksa
-    // art arda tekrarlayarak puan kasma açığı oluşur.
-    puan = Math.max(0, puan - soruKazanc + soruHatasi);
-    strike = soruBasiStrike; // Strike'ı sorunun başındaki değere döndür
-    updateScores();
+    // Maden modunda: puandan 10 düş (eğer doğru bulmuşsa)
+    // beklemede sadece doğru cevaplandıysa true olur
+    if (beklemede) {
+      puan = Math.max(0, puan - 10);
+      updateScores();
+    }
     beklemede = false;
     setSonrakiButon(false);
     // Seçenek panelini yenile
     renderMadenSecenekler(s);
-    showFeedback('Soru tekrar başlatıldı, skorunuz etkilenmedi! 🎯', 'info');
+    showFeedback('Soru sıfırlandı! 🎯', 'info');
     return;
   }
 
-  // Bu sorudan şu ana kadarki NET etkiyi (kazanç - kayıp) tamamen geri al.
-  puan = Math.max(0, puan - soruKazanc + soruHatasi);
-  strike = soruBasiStrike; // Strike'ı sorunun başındaki değere döndür
+  const bilinenIlSayisi = bulunanlar.filter(il => il !== null).length;
+  const buSorudanGelenPuan = bilinenIlSayisi * 10;
+  puan = Math.max(0, puan - buSorudanGelenPuan);
   updateScores();
   resetAllIller();
   bulunanlar = Array(s.iller.length).fill(null);
   beklemede = false;
   setSonrakiButon(false);
   renderSiraList();
-  showFeedback("Soru tekrar başlatıldı, skorunuz etkilenmedi! 🎯", "info");
+  showFeedback("Soru ve bu sorudan kazandığınız puan sıfırlandı! 🎯", "info");
 }
