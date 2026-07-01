@@ -634,7 +634,10 @@ h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 900; margin-bottom: 6px; }
 
   .il-label { font-size: 4px; }
 }
-
+/* ===== SONUÇ EKRANI YEŞİL RENK DÜZELTMESİ ===== */
+.rs-val.green {
+  color: var(--green);
+}
 /* ============ MOBİL YATAY MOD ============ */
 @media (max-height: 500px) and (orientation: landscape) {
   body { overflow: auto; }
