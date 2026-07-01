@@ -42,7 +42,6 @@ const KAT_BİLGİ = [
   { id: "AntikKentler", icon: "🏛️", ad: "Antik Kentler" },  // Klasik sütun/antik yapı ikonu
   { id: "KulturTurizmi", icon: "🎭", ad: "Kültür Turizmi" }, // Sanat ve kültürü simgeleyen maskeler (veya 🗺️)
   { id: "SinirKapilari", icon: "🛂", ad: "Sınır Kapıları" },
-  { id: "Barajlar", icon: "💧", ad: "Barajlar" },
   { id: "Magara", icon: "🦇", ad: "Mağaralar" },
   { id: "Kanyon", icon: "🏞️", ad: "Kanyonlar" },
   { id: "Ulasim", icon: "✈️", ad: "Ulaşım" },
@@ -92,7 +91,10 @@ const TUM_SORULAR = [
   { soru: "Avokado", kategori: "Bitkiler", iller: ["Antalya", "Mersin"] },
   { soru: "Muz (Mikroklima)", kategori: "Bitkiler", iller: ["Antalya", "Mersin"] },
 
-  // --- MADENLER ---
+
+
+
+ // --- MADENLER ---
   { soru: "Altın Çıkarımı", kategori: "Madenler", iller: ["Artvin", "Gümüşhane", "Erzincan", "Kayseri", "Eskişehir", "Uşak", "Manisa", "İzmir", "Balıkesir"] },
   { soru: "Asbest (Amyant) Çıkarımı", kategori: "Madenler", iller: ["Balıkesir", "Eskişehir", "Amasya", "Sivas", "Hatay"] },
   { soru: "Bakır Yatakları", kategori: "Madenler", iller: ["Kastamonu", "Artvin", "Rize", "Diyarbakır"] },
@@ -127,7 +129,7 @@ const TUM_SORULAR = [
   { soru: "Bor İşletmeleri (Tesis)", kategori: "Madenler", iller: ["Balıkesir", "Eskişehir"] },
   { soru: "Cıva Çıkarımı (Tek Sıvı Maden)", kategori: "Madenler", iller: ["İzmir", "Konya"] },
   { soru: "Antimon Çıkarımı", kategori: "Madenler", iller: ["Kütahya", "Tokat", "Niğde", "Balıkesir"] },
-  { soru: "Feldispat Çıkarımı (Cam ve Seramik Hammaddesi)", kategori: "Madenler", iller: ["Manisa", "Aydın", "Muğla"] },
+  { soru: "Feldispat Çıkarımı (Cam ve Seramik Hammaddesi)", kategori: "Madenler", iller: ["Manisa", "Aydın", "Kütahya", "Kırşehir", "Yozgat", "Artvin", "Ardahan"] },
 
 // --- ENERJİ ---
 { soru: "Asfaltit", kategori: "Enerji", iller: ["Şırnak"] },
@@ -366,18 +368,14 @@ const TUM_SORULAR = [
   { soru: "Petrol Kimya (Petrokimya) Tesisleri", kategori: "Sanayi", iller: ["İzmir", "Kocaeli"] },
 
   // --- ENDEMİK BİTKİLER ---
-  { soru: "Sığla (Günlük) Ağacı (Kozmetik/Eczacılık)", kategori: "Endemik", iller: ["Muğla"] },
-  { soru: "Kasnak Meşesi", kategori: "Endemik", iller: ["Isparta", "Konya"] },
-  { soru: "Kazdağı Göknarı", kategori: "Endemik", iller: ["Balıkesir", "Çanakkale"] },
-  { soru: "Datça Hurması", kategori: "Endemik", iller: ["Muğla"] },
-  { soru: "Ters Lale (Ağlayan Gelin)", kategori: "Endemik", iller: ["Hakkâri"] },
-  { soru: "İspir Meşesi", kategori: "Endemik", iller: ["Yozgat","Kastamonu"] },
-  { soru: "Karagül", kategori: "Endemik", iller: ["Şanlıurfa"] },
-  { soru: "Safran Otu (Kozmetik/Gıda)", kategori: "Endemik", iller: ["Karabük"] },
-  { soru: "Anzer Çayı", kategori: "Endemik", iller: ["Rize"] },
-  { soru: "Eber Sarısı", kategori: "Endemik", iller: ["Afyonkarahisar", "Konya"] },
-  { soru: "Kral Eğreltisi", kategori: "Endemik", iller: ["Rize"] },
-  { soru: "Kapadokya Soğanı", kategori: "Endemik", iller: ["Kayseri", "Niğde"] },
+{ soru: "Sığla (Günlük) Ağacı (Endemik)", kategori: "Endemik", iller: ["Muğla"] }, // Kozmetik ve Eczacılıkta kullanılır, relikt (kalıntı) ağaçtır.
+{ soru: "Kasnak Meşesi (Endemik)", kategori: "Endemik", iller: ["Isparta", "Burdur"] }, // Özellikle Isparta Eğirdir çevresinde koruma altındadır.
+{ soru: "Kazdağı Göknarı (Endemik)", kategori: "Endemik", iller: ["Balıkesir", "Çanakkale"] }, // Kaz Dağları'na özgü endemik ağaç türü.
+{ soru: "Datça Hurması (Endemik)", kategori: "Endemik", iller: ["Muğla"] }, // Datça ve Teke Yarımadası'na özgü palmiye türü.
+{ soru: "Ters Lale (Endemik)", kategori: "Endemik", iller: ["Hakkâri", "Van"] }, // Ağlayan Gelin olarak bilinir.
+{ soru: "İspir Meşesi (Endemik)", kategori: "Endemik", iller: ["Erzurum", "Yozgat", "Gümüşhane"] }, // İsmini Erzurum'un İspir ilçesinden alır.
+{ soru: "Eber Sarısı (Endemik)", kategori: "Endemik", iller: ["Afyon", "Konya"] }, // Eber ve Akşehir Gölleri çevresinde yetişen baklagil türü.
+{ soru: "Kapadokya Soğanı (Endemik)", kategori: "Endemik", iller: ["Kayseri", "Niğde", "Nevşehir"] }, // Erciyes ve Melendiz Dağları çevresinde yetişir.
 
     //ULAŞIM
   // Ulaşım bağlantıları ve deniz üzeri yapılar harita üzerinde çok sorulur.
@@ -401,6 +399,7 @@ const TUM_SORULAR = [
   { soru: "DOKAP Kapsamındaki İller", kategori: "Projeler", iller: ["Artvin", "Rize", "Trabzon", "Giresun", "Ordu", "Samsun", "Tokat", "Amasya", "Çorum", "Bayburt", "Gümüşhane"] },
   { soru: "DAP (Doğu Anadolu Projesi) Kapsamındaki Bazı Kritik İller", kategori: "Projeler", iller: ["Erzurum", "Kars", "Ardahan", "Ağrı", "Iğdır", "Van", "Hakkâri", "Bitlis", "Muş", "Bingöl", "Tunceli", "Erzincan", "Malatya", "Elazığ", "Sivas"] },
   { soru: "YHGP (Yeşilırmak Havzası Gelişim Projesi)", kategori: "Projeler", iller: ["Amasya", "Çorum", "Tokat", "Samsun"] },
+  { soru: "GAP (Güneydoğu Anadolu Projesi) Kapsamındaki İller", kategori: "Projeler", iller: ["Gaziantep", "Diyarbakır", "Şanlıurfa", "Mardin", "Adıyaman", "Batman", "Siirt", "Şırnak", "Kilis"] }, // Türkiye'nin En Büyük Sulama ve Hidroelektrik Odaklı Bölgesel Kalkınma Projesi
 
   // --- MİLLİ PARKLAR ---
   { soru: "Nemrut Dağı Milli Parkı", kategori: "MilliParklar", iller: ["Adıyaman", "Malatya"] },
@@ -438,7 +437,7 @@ const TUM_SORULAR = [
   { soru: "İstiklal Yolu Tarihi Milli Parkı", kategori: "MilliParklar", iller: ["Kastamonu", "Çankırı", "Ankara"] },
   { soru: "Sultan Sazlığı Milli Parkı", kategori: "MilliParklar", iller: ["Kayseri"] },
   { soru: "İğneada Longoz Ormanları Milli Parkı", kategori: "MilliParklar", iller: ["Kırklareli"] },
-  { soru: "Beyşehir Gölü Milli Parkı", kategori: "MilliParklar", iller: ["Konya"] },
+  { soru: "Beyşehir Gölü Milli Parkı", kategori: "MilliParklar", iller: ["Konya","Isparta"] },
   { soru: "Derebucak Çamlık Mağaraları Milli Parkı", kategori: "MilliParklar", iller: ["Konya"] },
   { soru: "Spil Dağı Milli Parkı", kategori: "MilliParklar", iller: ["Manisa"] },
   { soru: "Marmaris Milli Parkı", kategori: "MilliParklar", iller: ["Muğla"] },
@@ -468,7 +467,7 @@ const TUM_SORULAR = [
   { soru: "Burdur Gölü (Ramsar)", kategori: "Ramsar", iller: ["Burdur"] },
   { soru: "Seyfe Gölü (Ramsar)", kategori: "Ramsar", iller: ["Kırşehir"] },
   { soru: "Kuyucuk Gölü (Ramsar)", kategori: "Ramsar", iller: ["Kars"] },
-  { soru: "Nemrut Gölü (Ramsar)", kategori: "Ramsar", iller: ["Bitlis"] },
+  { soru: "Nemrut Kalderası (Ramsar)", kategori: "Ramsar", iller: ["Bitlis"] },
 
   // --- GEÇİTLER ---
   { soru: "Çubuk Geçidi", kategori: "Gecitler", iller: ["Antalya", "Burdur"] },
@@ -492,78 +491,32 @@ const TUM_SORULAR = [
   { soru: "Ovit Dağı Tüneli", kategori: "Tuneller", iller: ["Erzurum", "Rize"] },
   { soru: "Orhangazi Tüneli (Samanlı Dağı Tüneli)", kategori: "Tuneller", iller: ["Yalova", "Bursa"] },
   { soru: "Nefise Akçelik Tüneli", kategori: "Tuneller", iller: ["Ordu"] },
-  { soru: "Bolu Dağı Tüneli", kategori: "Tuneller", iller: ["İstanbul", "Ankara"] },
+  { soru: "Bolu Dağı Tüneli", kategori: "Tuneller", iller: ["Bolu", "Düzce"] },
   { soru: "Cankurtaran Tüneli", kategori: "Tuneller", iller: ["Artvin"] },
   { soru: "15 Temmuz Ilgaz Tüneli", kategori: "Tuneller", iller: ["Kastamonu", "Çankırı"] },
   { soru: "75. Yıl Selatin Tüneli", kategori: "Tuneller", iller: ["İzmir", "Aydın"] },
   { soru: "Kop Dağı Tüneli", kategori: "Tuneller", iller: ["Erzurum", "Bayburt"] },
 
   // --- TURİZM ---
-  { soru: "Uludağ (Kış Turizmi)", kategori: "Turizm", iller: ["Bursa"] },
-  { soru: "Erciyes (Kış Turizmi)", kategori: "Turizm", iller: ["Kayseri"] },
-  { soru: "Palandöken (Kış Turizmi)", kategori: "Turizm", iller: ["Erzurum"] },
-  { soru: "Sarıkamış (Kış Turizmi)", kategori: "Turizm", iller: ["Kars"] },
   { soru: "Elmadağ (Kış Turizmi)", kategori: "Turizm", iller: ["Ankara"] },
-  { soru: "Kartalkaya (Kış Turizmi)", kategori: "Turizm", iller: ["Bolu"] },
-  { soru: "Ilgaz (Kış Turizmi)", kategori: "Turizm", iller: ["Kastamonu"] },
   { soru: "Saklıkent (Kış Turizmi)", kategori: "Turizm", iller: ["Antalya"] },
   { soru: "Davras (Kış Turizmi)", kategori: "Turizm", iller: ["Isparta"] },
   { soru: "Ladik (Kış Turizmi)", kategori: "Turizm", iller: ["Samsun"] },
   { soru: "Kartepe (Kış Turizmi)", kategori: "Turizm", iller: ["Kocaeli"] },
   { soru: "Bozdağlar (Kış Turizmi)", kategori: "Turizm", iller: ["İzmir"] },
   { soru: "Ergan Dağı (Kış Turizmi)", kategori: "Turizm", iller: ["Erzincan"] },
-  { soru: "Meryem Ana (Hz. İsa'nın Annesi Meryem'in Son Yaşadığına İnanılan Ev) (İnanç Turizmi)", kategori: "Turizm", iller: ["İzmir"] },
-  { soru: "Demre / St. Nicolas Kilisesi (Noel Baba'nın / Aziz Nikolaos'un Yaşadığı ve Gömülü Olduğu Kilise) (İnanç Turizmi)", kategori: "Turizm", iller: ["Antalya"] },
-  { soru: "St. Pierre (Hristiyanlığın İlk Yeraltı / Mağara Kilisesi) (İnanç Turizmi)", kategori: "Turizm", iller: ["Hatay"] },
-  { soru: "Akdamar Kilisesi (Van Gölü'ndeki Adada, Ermeni Mimarisi ve Kabartmalarıyla Ünlü) (İnanç Turizmi)", kategori: "Turizm", iller: ["Van"] },
-  { soru: "Sümela Manastırı (Kayalıklara Oyulmuş Rum-Ortodoks Manastırı) (İnanç Turizmi)", kategori: "Turizm", iller: ["Trabzon"] },
-  { soru: "Deyrulzaferan (Süryani Ortodoks Kilisesi'nin En Eski Manastırlarından) (İnanç Turizmi)", kategori: "Turizm", iller: ["Mardin"] },
-  { soru: "Selimiye (Mimar Sinan'ın Ustalık Eseri Camii) (İnanç Turizmi)", kategori: "Turizm", iller: ["Edirne"] },
-  { soru: "Ulucami (Osmanlı Erken Dönem Çok Kubbeli - 20 Kubbeli Cami Mimarisi) (İnanç Turizmi)", kategori: "Turizm", iller: ["Bursa"] },
-  { soru: "Balıklıgöl (Hz. İbrahim'in Ateşe Atıldığı Yerin Havuza Dönüştüğüne İnanılan Kutsal Mekan) (İnanç Turizmi)", kategori: "Turizm", iller: ["Şanlıurfa"] },
-  { soru: "Mevlânâ (Mevlana Celaleddin Rumi'nin Türbesi - Mevlevilik Tarikatının Merkezi) (İnanç Turizmi)", kategori: "Turizm", iller: ["Konya"] },
-  { soru: "Hacıbektaş (Hacı Bektaş Veli'nin Türbesi - Bektaşilik Tarikatının Merkezi) (İnanç Turizmi)", kategori: "Turizm", iller: ["Nevşehir"] },
+  { soru: "Meryem Ana (Hz. İsa'nın Annesi Meryem'in Son Yaşadığına İnanılan Ev)", kategori: "Turizm", iller: ["İzmir"] },
+  { soru: "Demre / St. Nicolas Kilisesi (Noel Baba'nın / Aziz Nikolaos'un Yaşadığı ve Gömülü Olduğu Kilise)", kategori: "Turizm", iller: ["Antalya"] },
+  { soru: "St. Pierre (Hristiyanlığın İlk Yeraltı / Mağara Kilisesi)", kategori: "Turizm", iller: ["Hatay"] },
+  { soru: "Akdamar Kilisesi (Van Gölü'ndeki Adada, Ermeni Mimarisi ve Kabartmalarıyla Ünlü)", kategori: "Turizm", iller: ["Van"] },
+  { soru: "Sümela Manastırı (Kayalıklara Oyulmuş Rum-Ortodoks Manastırı)", kategori: "Turizm", iller: ["Trabzon"] },
+  { soru: "Deyrulzaferan (Süryani Ortodoks Kilisesi'nin En Eski Manastırlarından)", kategori: "Turizm", iller: ["Mardin"] },
+  { soru: "Selimiye (Mimar Sinan'ın Ustalık Eseri Camii) ", kategori: "Turizm", iller: ["Edirne"] },
+  { soru: "Ulucami (Osmanlı Erken Dönem Çok Kubbeli - 20 Kubbeli Cami Mimarisi)", kategori: "Turizm", iller: ["Bursa"] },
+  { soru: "Balıklıgöl (Hz. İbrahim'in Ateşe Atıldığı Yerin Havuza Dönüştüğüne İnanılan Kutsal Mekan)", kategori: "Turizm", iller: ["Şanlıurfa"] },
+  { soru: "Mevlânâ (Mevlana Celaleddin Rumi'nin Türbesi - Mevlevilik Tarikatının Merkezi)", kategori: "Turizm", iller: ["Konya"] },
+  { soru: "Hacıbektaş (Hacı Bektaş Veli'nin Türbesi - Bektaşilik Tarikatının Merkezi)", kategori: "Turizm", iller: ["Nevşehir"] },
 
-// --- ANTİK KENTLER ---
-  { soru: "Efes Antik Kenti (Artemis Tapınağı - Dünyanın 7 Harikasından)", kategori: "AntikKentler", iller: ["İzmir"] },
-  { soru: "Bergama Antik Kenti (Dik Amfitiyatro ve Dünyanın İlk Kütüphanelerinden - Parşömenin İcadı)", kategori: "AntikKentler", iller: ["İzmir"] },
-  { soru: "Teos Antik Kenti (Dionysos Tapınağı - İon Birliği'nin Dini Merkezi)", kategori: "AntikKentler", iller: ["İzmir"] },
-  { soru: "Truva Antik Kenti (Truva Savaşı ve Tahta At Efsanesi - Homeros'un İlyada'sı)", kategori: "AntikKentler", iller: ["Çanakkale"] },
-  { soru: "Assos Antik Kenti (Aristoteles'in Felsefe Okulu Kurduğu Yer)", kategori: "AntikKentler", iller: ["Çanakkale"] },
-  { soru: "Perge Antik Kenti (Pamphylia'nın Geniş Sütunlu Caddeleriyle Ünlü Kenti)", kategori: "AntikKentler", iller: ["Antalya"] },
-  { soru: "Termessos Antik Kenti (Büyük İskender'in Ele Geçiremediği 'Kartal Yuvası' Kent)", kategori: "AntikKentler", iller: ["Antalya"] },
-  { soru: "Aspendos Antik Kenti (Dünyanın En İyi Korunmuş Roma Tiyatrosu)", kategori: "AntikKentler", iller: ["Antalya"] },
-  { soru: "Phaselis Antik Kenti (Üç Koylu Liman Kenti - Büyük İskender'in Kışladığı Yer)", kategori: "AntikKentler", iller: ["Antalya"] },
-  { soru: "Olympos Antik Kenti (Likya Birliği Kenti - Chimera Efsanesi)", kategori: "AntikKentler", iller: ["Antalya"] },
-  { soru: "Patara Antik Kenti (Likya Birliği'nin Başkenti - Noel Baba'nın Doğduğu Yer)", kategori: "AntikKentler", iller: ["Antalya"] },
-  { soru: "Xanthos Antik Kenti (Likya Birliği'nin En Önemli Kenti - Nereidler Anıtı)", kategori: "AntikKentler", iller: ["Antalya"] },
-  { soru: "Myra Antik Kenti (Kaya Mezarları ve Aziz Nikolaos / Noel Baba Kilisesi)", kategori: "AntikKentler", iller: ["Antalya"] },
-  { soru: "Sardes Antik Kenti (Lidya Krallığı'nın Başkenti - İlk Parayı Basan Uygarlık)", kategori: "AntikKentler", iller: ["Manisa"] },
-  { soru: "Hierapolis Antik Kenti (Antik Şifa/Tıp Merkezi - Pamukkale Travertenleri)", kategori: "AntikKentler", iller: ["Denizli"] },
-  { soru: "Laodikeia Antik Kenti (Hristiyanlığın Yedi Kilisesinden Biri)", kategori: "AntikKentler", iller: ["Denizli"] },
-  { soru: "Afrodisias Antik Kenti (Afrodit Tapınağı ve Ünlü Heykeltıraşlık Okulu)", kategori: "AntikKentler", iller: ["Aydın"] },
-  { soru: "Milet Antik Kenti (İlk Filozofların - Thales, Anaksimandros - Yaşadığı Felsefenin Beşiği)", kategori: "AntikKentler", iller: ["Aydın"] },
-  { soru: "Didyma Antik Kenti (Apollon Tapınağı ve Ünlü Kehanet Ocağı)", kategori: "AntikKentler", iller: ["Aydın"] },
-  { soru: "Priene Antik Kenti (Izgara Plan / Hippodamos Şehircilik Örneği)", kategori: "AntikKentler", iller: ["Aydın"] },
-  { soru: "Knidos Antik Kenti (Praksiteles'in Ünlü Afrodit Heykeli - İki Limanlı Kent)", kategori: "AntikKentler", iller: ["Muğla"] },
-  { soru: "Kaunos Antik Kenti (Kaya Mezarları - Dalyan'a Yakın Antik Kent)", kategori: "AntikKentler", iller: ["Muğla"] },
-  { soru: "Stratonikeia Antik Kenti ('Taşların Şehri' - Dünyanın En Büyük Mermer Ocağı Üzerinde)", kategori: "AntikKentler", iller: ["Muğla"] },
-  { soru: "Aizanoi Antik Kenti (En İyi Korunmuş Zeus Tapınağı - Bilinen İlk Borsa Binası)", kategori: "AntikKentler", iller: ["Kütahya"] },
-  { soru: "Gordion Antik Kenti (Frigya Krallığı'nın Başkenti - Gordion Düğümü ve Kral Midas Efsanesi)", kategori: "AntikKentler", iller: ["Ankara"] },
-  { soru: "Pessinus Antik Kenti (Kibele / Ana Tanrıça Kültünün Merkezi)", kategori: "AntikKentler", iller: ["Eskişehir"] },
-  { soru: "Hattuşaş Antik Kenti (Hitit İmparatorluğu'nun Başkenti - Kadeş Antlaşması Tabletleri)", kategori: "AntikKentler", iller: ["Çorum"] },
-  { soru: "Alacahöyük Antik Kenti (Hitit Öncesi Dönem - Güneş Kursu ve Kral Mezarları)", kategori: "AntikKentler", iller: ["Çorum"] },
-  { soru: "Kültepe Antik Kenti (Asurlu Tüccar Kolonisi - Anadolu'da Yazının Başladığı Yer)", kategori: "AntikKentler", iller: ["Kayseri"] },
-  { soru: "Çatalhöyük Neolitik Kenti (Bilinen İlk Yerleşik Tarım Toplumu Örneklerinden)", kategori: "AntikKentler", iller: ["Konya"] },
-  { soru: "Göbeklitepe Arkeolojik Alanı (Dünyanın Bilinen En Eski Tapınağı - 'Sıfır Noktası')", kategori: "AntikKentler", iller: ["Şanlıurfa"] },
-  { soru: "Karahantepe Arkeolojik Alanı (Göbeklitepe ile Çağdaş - Taş Tepeler Projesi)", kategori: "AntikKentler", iller: ["Şanlıurfa"] },
-  { soru: "Arslantepe Höyüğü (Bilinen En Eski Devlet Yapılanması ve İlk Bronz İşçiliği İzleri)", kategori: "AntikKentler", iller: ["Malatya"] },
-  { soru: "Zeugma Antik Kenti (Ünlü Mozaikleriyle Tanınan Roma Dönemi Kenti)", kategori: "AntikKentler", iller: ["Gaziantep"] },
-  { soru: "Anazarbus Antik Kenti (Kilikya Bölgesinin Çifte Sütunlu Caddeli Kenti)", kategori: "AntikKentler", iller: ["Adana"] },
-  { soru: "Castabala Antik Kenti (Sütunlu Caddesiyle Bilinen Antik Kent)", kategori: "AntikKentler", iller: ["Osmaniye"] },
-  { soru: "Soloi Pompeipolis Antik Kenti (Korsanlara Karşı Roma'nın Kurduğu Liman Kenti)", kategori: "AntikKentler", iller: ["Mersin"] },
-  { soru: "Dara Antik Kenti (Bizans-Sasani Sınır Kalesi - Yeraltı Su Sarnıçları)", kategori: "AntikKentler", iller: ["Mardin"] },
-  { soru: "Ani Arkeolojik Alanı ('1001 Kilise Şehri' - İpek Yolu Üzerinde)", kategori: "AntikKentler", iller: ["Kars"] },
 
   // --- SINIR KAPILARI ---
   { soru: "İpsala Sınır Kapısı", kategori: "SinirKapilari", iller: ["Edirne"] },
@@ -597,42 +550,6 @@ const TUM_SORULAR = [
   { soru: "Şenyurt Sınır Kapısı", kategori: "SinirKapilari", iller: ["Mardin"] },
   { soru: "Nusaybin Sınır Kapısı", kategori: "SinirKapilari", iller: ["Mardin"] },
   { soru: "Cizre Sınır Kapısı", kategori: "SinirKapilari", iller: ["Şırnak"] },
-
-  // --- BARAJLAR ---
-  { soru: "Atatürk Barajı (Fırat)", kategori: "Barajlar", iller: ["Şanlıurfa", "Adıyaman"] },
-  { soru: "Keban Barajı (Fırat)", kategori: "Barajlar", iller: ["Elazığ"] },
-  { soru: "Karakaya Barajı (Fırat)", kategori: "Barajlar", iller: ["Malatya", "Diyarbakır"] },
-  { soru: "Birecik Barajı (Fırat)", kategori: "Barajlar", iller: ["Şanlıurfa"] },
-  { soru: "Karkamış Barajı (Fırat)", kategori: "Barajlar", iller: ["Gaziantep"] },
-  { soru: "Ilısu Barajı (Dicle)", kategori: "Barajlar", iller: ["Mardin", "Şırnak"] },
-  { soru: "Kralkızı Barajı (Dicle)", kategori: "Barajlar", iller: ["Diyarbakır"] },
-  { soru: "Dicle Barajı", kategori: "Barajlar", iller: ["Diyarbakır"] },
-  { soru: "Batman Barajı (Dicle)", kategori: "Barajlar", iller: ["Batman"] },
-  { soru: "Yusufeli Barajı (Çoruh)", kategori: "Barajlar", iller: ["Artvin"] },
-  { soru: "Deriner Barajı (Çoruh)", kategori: "Barajlar", iller: ["Artvin"] },
-  { soru: "Borçka Barajı (Çoruh)", kategori: "Barajlar", iller: ["Artvin"] },
-  { soru: "Muratlı Barajı (Çoruh)", kategori: "Barajlar", iller: ["Artvin"] },
-  { soru: "Almus Barajı (Yeşilırmak)", kategori: "Barajlar", iller: ["Tokat"] },
-  { soru: "Hasan Uğurlu Barajı (Yeşilırmak)", kategori: "Barajlar", iller: ["Samsun"] },
-  { soru: "Suat Uğurlu Barajı (Yeşilırmak)", kategori: "Barajlar", iller: ["Samsun"] },
-  { soru: "Kılıçkaya Barajı (Yeşilırmak)", kategori: "Barajlar", iller: ["Sivas"] },
-  { soru: "Hirfanlı Barajı (Kızılırmak)", kategori: "Barajlar", iller: ["Kırşehir"] },
-  { soru: "Derbent Barajı (Kızılırmak)", kategori: "Barajlar", iller: ["Samsun"] },
-  { soru: "Altınkaya Barajı (Kızılırmak)", kategori: "Barajlar", iller: ["Samsun"] },
-  { soru: "Kapulukaya Barajı (Kızılırmak)", kategori: "Barajlar", iller: ["Kırıkkale"] },
-  { soru: "Kesikköprü Barajı (Kızılırmak)", kategori: "Barajlar", iller: ["Ankara"] },
-  { soru: "Sarıyar Barajı (Sakarya)", kategori: "Barajlar", iller: ["Ankara"] },
-  { soru: "Gökçekaya Barajı (Sakarya)", kategori: "Barajlar", iller: ["Eskişehir"] },
-  { soru: "Seyhan Barajı", kategori: "Barajlar", iller: ["Adana"] },
-  { soru: "Aslantaş Barajı (Ceyhan)", kategori: "Barajlar", iller: ["Osmaniye"] },
-  { soru: "Menzelet Barajı (Ceyhan)", kategori: "Barajlar", iller: ["Kahramanmaraş"] },
-  { soru: "Sır Barajı (Ceyhan)", kategori: "Barajlar", iller: ["Kahramanmaraş"] },
-  { soru: "Kemer Barajı (Büyük Menderes)", kategori: "Barajlar", iller: ["Aydın"] },
-  { soru: "Adıgüzel Barajı (Büyük Menderes)", kategori: "Barajlar", iller: ["Denizli"] },
-  { soru: "Demirköprü Barajı (Gediz)", kategori: "Barajlar", iller: ["Manisa"] },
-  { soru: "Oymapınar Barajı (Manavgat)", kategori: "Barajlar", iller: ["Antalya"] },
-  { soru: "Gezende Barajı (Göksu)", kategori: "Barajlar", iller: ["Mersin"] },
-
 
   // --- UNESCO ---
   { soru: "İstanbul'un Tarihî Alanları (Sultanahmet, Ayasofya, Topkapı - Bizans ve Osmanlı Başkentliği Mirası) (UNESCO)", kategori: "UNESCO", iller: ["İstanbul"] },
