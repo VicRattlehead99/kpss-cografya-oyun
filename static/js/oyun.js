@@ -87,7 +87,7 @@ const TUM_SORULAR = [
   { soru: "Zeytin (Mikroklima)", kategori: "Bitkiler", iller: ["Artvin"] },
   { soru: "Pamuk (Mikroklima)", kategori: "Bitkiler", iller: ["Iğdır"] },
   { soru: "Aspir", kategori: "Bitkiler", iller: ["Kayseri", "Konya", "Isparta", "Aksaray","Nevşehir"] },
-  { soru: "Kırmızı Mercimek", kategori: "Bitkiler", iller: ["Şanlıurfa"] },
+  { soru: "Kırmızı Mercimek", kategori: "Bitkiler", iller: ["Şanlıurfa","Diyarbakır"] },
   { soru: "Avokado", kategori: "Bitkiler", iller: ["Antalya", "Mersin"] },
   { soru: "Muz (Mikroklima)", kategori: "Bitkiler", iller: ["Antalya", "Mersin"] },
 
@@ -151,9 +151,9 @@ const TUM_SORULAR = [
   { soru: "Manda", kategori: "Hayvancılık", iller: ["Samsun", "Diyarbakır", "İstanbul", "Kayseri", "Bitlis"] },
   { soru: "Koyun", kategori: "Hayvancılık", iller: ["Van", "Konya", "Şanlıurfa", "Diyarbakır", "Ankara"] },
   { soru: "Kıl Keçisi", kategori: "Hayvancılık", iller: ["Mersin", "Antalya", "Siirt", "Şırnak", "Mardin"] },
-  { soru: "Kümes Hayvancılığı (Tavuk)", kategori: "Hayvancılık", iller: ["Manisa", "Bolu", "Sakarya", "Mersin", "Balıkesir"] },
+  { soru: "Kümes Hayvancılığı (Tavuk)", kategori: "Hayvancılık", iller: ["Manisa", "Bolu", "Sakarya", "Mersin", "Balıkesir", "Ankara", "Konya"] },
   { soru: "Arıcılık", kategori: "Hayvancılık", iller: ["Ordu", "Adana", "Muğla", "Sivas", "Siirt"] },
-  { soru: "İpek Böcekçiliği", kategori: "Hayvancılık", iller: ["Diyarbakır","Batman","Muğla","Antalya","İzmir"] },
+  { soru: "İpek Böcekçiliği", kategori: "Hayvancılık", iller: ["Diyarbakır","Muğla","Antalya","Bolu","Bilecik","İzmir"] },
 
   // --- DAĞLAR ---
   { soru: "Kula (Volkanik Dağ)", kategori: "Dağlar", iller: ["Manisa"] },
@@ -286,50 +286,55 @@ const TUM_SORULAR = [
 { soru: "Tatlıca Şelalesi", kategori: "Akarsular", iller: ["Sinop"] },
 { soru: "Kapuzbaşı Şelalesi", kategori: "Akarsular", iller: ["Kayseri"] },
 
-  // --- GÖLLER ---
-{ soru: "Manyas Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Balıkesir"] },
-{ soru: "Uluabat Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Bursa"] },
-{ soru: "İznik Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Bursa"] },
-{ soru: "Sapanca Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Sakarya"] },
-{ soru: "Eğirdir Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Isparta"] },
-{ soru: "Beyşehir Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Konya", "Isparta"] },
-{ soru: "Akşehir Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Konya", "Afyon"] },
-{ soru: "Eber Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Afyon"] },
-{ soru: "Tuz Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Konya", "Aksaray", "Ankara"] },
-{ soru: "Seyfe Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Kırşehir"] },
-{ soru: "Hazar Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Elazığ"] },
-{ soru: "Aktaş Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Ardahan"] },
-{ soru: "Salda Gölü (Karstik) ❌", kategori: "Göller", iller: ["Burdur"] },
-{ soru: "Kestel Gölü (Karstik) ❌", kategori: "Göller", iller: ["Burdur"] },
-{ soru: "Avlan Gölü (Karstik) ❌", kategori: "Göller", iller: ["Antalya"] },
-{ soru: "Suğla Gölü (Karstik) ❌", kategori: "Göller", iller: ["Konya"] },
-{ soru: "Hafik Gölü (Karstik) ✅", kategori: "Göller", iller: ["Sivas"] },
-{ soru: "Meke Maar Gölü (Volkanik) ❌", kategori: "Göller", iller: ["Konya"] },
-{ soru: "Acıgöl Maar Gölü (Volkanik) ❌", kategori: "Göller", iller: ["Konya"] },
-{ soru: "Nemrut Krater Gölü (Volkanik) ❌", kategori: "Göller", iller: ["Bitlis"] },
-{ soru: "Abant Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Bolu"] },
-{ soru: "Yedigöller (Heyelan Set) ✅", kategori: "Göller", iller: ["Bolu"] },
-{ soru: "Borabay Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Amasya"] },
-{ soru: "Zinav Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Tokat"] },
-{ soru: "Tortum Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Erzurum"] },
-{ soru: "Çıldır Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Ardahan", "Kars"] },
-{ soru: "Balık Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Ağrı"] },
-{ soru: "Haçlı Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Muş"] },
-{ soru: "Nazik Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Bitlis"] },
-{ soru: "Van Gölü (Volkanik Set) ❌", kategori: "Göller", iller: ["Van", "Bitlis"] },
-{ soru: "Erçek Gölü (Volkanik Set) ❌", kategori: "Göller", iller: ["Van"] },
-{ soru: "Gala Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Edirne"] },
-{ soru: "Marmara Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Manisa"] },
-{ soru: "Bafa Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Aydın", "Muğla"] },
-{ soru: "Köyceğiz Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Muğla"] },
-{ soru: "Eymir Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Ankara"] },
-{ soru: "Mogan Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Ankara"] },
-{ soru: "Terkos Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["İstanbul"] },
-{ soru: "Küçükçekmece Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["İstanbul"] },
-{ soru: "Büyükçekmece Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["İstanbul"] },
-{ soru: "Balık Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["Samsun"] },
-{ soru: "Akyatan Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["Adana"] },
-{ soru: "Ağyatan Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["Adana"] },
+// --- GÖLLER ---
+{ soru: "Manyas (Kuş) Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Balıkesir"] }, // Karadere aracılığıyla Susurluk Çayı'na boşalır.
+{ soru: "Uluabat Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Bursa"] }, // Uluabat Deresi ile Mustafakemalpaşa Çayı/Susurluk'a bağlanır.
+{ soru: "İznik Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Bursa"] }, // Gideğeni (Garsak Deresi) vardır, Marmara Denizi'ne dökülür.
+{ soru: "Sapanca Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Sakarya"] }, // Çark Deresi vasıtasıyla Sakarya Nehri'ne boşalır.
+{ soru: "Eğirdir Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Isparta"] }, // Kovada Kanalı ile sularını Kovada Gölü'ne akıtır.
+{ soru: "Beyşehir Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Konya", "Isparta"] }, // Beyşehir Çayı (gideğeni) ile sularını sular, tatlı sudur.
+{ soru: "Akşehir Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Konya", "Afyon"] }, // Kapalı havzadır, gideğeni yoktur (tuzlu/acı).
+{ soru: "Eber Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Afyon"] }, // Sularını bir kanalla Akşehir Gölü'ne gönderir, gideğeni vardır.
+{ soru: "Tuz Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Konya", "Aksaray", "Ankara"] }, // Net bir kapalı havzadır, gideğeni yoktur.
+{ soru: "Seyfe Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Kırşehir"] }, // Kapalı havzadır, gideğeni yoktur.
+{ soru: "Hazar Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Elazığ"] }, // Dicle Nehri'nin kaynaklarından birini oluşturur, gideğeni vardır.
+{ soru: "Aktaş Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Ardahan"] }, // Kapalı havza özelliği taşır, net bir açık akarı yoktur.
+{ soru: "Ilgın Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Konya"] }, // Çavuşçu Gölü olarak da bilinir, gideğeni (doğal/yapay kanalları) vardır.
+{ soru: "Işıklı Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Denizli"] }, // Büyük Menderes Nehri'ni besleyen ana gideğenlerden biridir.
+{ soru: "Acıgöl (Tektonik) ❌", kategori: "Göller", iller: ["Afyon", "Denizli"] }, // Suları dışarıya akmadığı için yüksek oranda sodyum sülfat içerir, gideğeni yoktur.
+{ soru: "Salda Gölü (Karstik) ❌", kategori: "Göller", iller: ["Burdur"] }, // Dışarıya akışı olmayan kapalı bir karstik havzadır.
+{ soru: "Kestel Gölü (Karstik) ❌", kategori: "Göller", iller: ["Burdur"] }, // Doğal bir gideğeni yoktur (geçmişte düdenlerle yer altına batardı).
+{ soru: "Avlan Gölü (Karstik) ❌", kategori: "Göller", iller: ["Antalya"] }, // Karstik kapalı havzadır, gideğeni yoktur.
+{ soru: "Suğla Gölü (Karstik) ✅", kategori: "Göller", iller: ["Konya"] }, // Beyşehir'den gelen suları alır ve fazla suyunu kurutma kanalları/gideğenle tahliye eder.
+{ soru: "Hafik Gölü (Karstik) ✅", kategori: "Göller", iller: ["Sivas"] }, // Kızılırmak'a bağlanan bir gideğeni (göl ayağı) mevcuttur.
+{ soru: "Kovada Gölü (Karstik) ✅", kategori: "Göller", iller: ["Isparta"] }, // Kovada Çayı ile sularını dışarıya akıtır, açık havzadır.
+{ soru: "Meke Maar Gölü (Volkanik) ❌", kategori: "Göller", iller: ["Konya"] }, // Gaz patlamasıyla oluşmuş kapalı bir maardır, gideğeni yoktur.
+{ soru: "Acıgöl Maar Gölü (Volkanik) ❌", kategori: "Göller", iller: ["Konya"] }, // Meke yakınlarındaki acı göldür, gideğeni yoktur.
+{ soru: "Nemrut Krater Gölü (Volkanik) ❌", kategori: "Göller", iller: ["Bitlis"] }, // Kaldera içinde kalmıştır, dışarıya akışı yoktur.
+{ soru: "Abant Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Bolu"] }, // Abant Deresi adında bir gideğeni vardır.
+{ soru: "Yedigöller (Heyelan Set) ✅", kategori: "Göller", iller: ["Bolu"] }, // Göller birbirine sızıntı ve derelerle bağlıdır, dışarıya akışları vardır.
+{ soru: "Borabay Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Amasya"] }, // Borabay Deresi adıyla dışarıya akışı vardır.
+{ soru: "Zinav Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Tokat"] }, // Zinav Deresi aracılığıyla Yeşilırmak'ın kollarına boşalır.
+{ soru: "Tortum Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Erzurum"] }, // Tortum Çayı gölden çıkarak ünlü Tortum Şelalesi'ni oluşturur.
+{ soru: "Çıldır Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Ardahan", "Kars"] }, // Telek Çayı (Arpaçay'ın kolu) adında bir gideğeni vardır.
+{ soru: "Balık Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Ağrı"] }, // Sularını bir dere vasıtasıyla Murat Nehri'ne ulaştırır.
+{ soru: "Haçlı Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Muş"] }, // Şeyhpir Deresi aracılığıyla Murat Nehri'ne boşalır.
+{ soru: "Nazik Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Bitlis"] }, // Sularını bir gideğen kanalıyla Van Gölü'ne ulaştırır.
+{ soru: "Van Gölü (Volkanik Set) ❌", kategori: "Göller", iller: ["Van", "Bitlis"] }, // Dünyanın en büyük sodalı gölüdür, dışarıya akışı (gideğeni) yoktur.
+{ soru: "Erçek Gölü (Volkanik Set) ❌", kategori: "Göller", iller: ["Van"] }, // Dışarıya akışı olmayan kapalı, doğu Anadolu havzası gölüdür.
+{ soru: "Gala Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Edirne"] }, // Meriç Nehri delta sistemine bağlıdır, kanallarla nehre/denize açılır.
+{ soru: "Marmara Gölü (Alüvyal Set) ❌", kategori: "Göller", iller: ["Manisa"] }, // Doğal bir dışa akışı yoktur, son yıllarda tamamen kuruma noktasına gelmiştir.
+{ soru: "Bafa Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Aydın", "Muğla"] }, // Büyük Menderes Nehri ile bir bağlantı (gideğen/kanal) hattı vardır.
+{ soru: "Köyceğiz Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Muğla"] }, // Dalyan Kanalı aracılığıyla Akdeniz'e bağlanır.
+{ soru: "Eymir Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Ankara"] }, // Fazla sularını Mogan Gölü'nden alır ve İmrahor Vadisi'ne doğru gideğenle verir.
+{ soru: "Mogan Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Ankara"] }, // Sularını bir kanalla (gideğenle) Eymir Gölü'ne akıtır.
+{ soru: "Simenlik Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Samsun"] }, // Yeşilırmak deltası üzerindedir, Karadeniz'e bağlantılı kolları vardır.
+{ soru: "Terkos (Durusu) Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["İstanbul"] }, // Fazla suları eskiden Karadeniz'e akan bir gideğene sahipti (şu an baraj kapağı/taşkın kanalı kontrollü).
+{ soru: "Küçükçekmece Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["İstanbul"] }, // Denizle doğrudan bağlantısı (boğazı/gideğeni) vardır.
+{ soru: "Büyükçekmece Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["İstanbul"] }, // Denizle lagün ağzı bağlantısı (gideğeni) vardır.
+{ soru: "Balık Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["Samsun"] }, // Kızılırmak deltası göllerindendir, denize bağlanan kanalları vardır.
+{ soru: "Akyatan Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["Adana"] }, // Seyhan/Ceyhan deltası lagünüdür, Akdeniz'e açılan bağlantı kanalı bulunur.
+
 
   // --- DİĞER (Köy Altı Yerleşmeleri, Körfezler) ---
   { soru: "Divan (Köy Altı)", kategori: "Diğer", iller: ["Bolu", "Sakarya", "Zonguldak", "Kastamonu", "Sinop"] },
@@ -567,7 +572,7 @@ const TUM_SORULAR = [
   { soru: "Diyarbakır Kalesi ve Surları (Çin Seddi'nden Sonra Dünyanın En Uzun İkinci Suru) (UNESCO)", kategori: "UNESCO", iller: ["Diyarbakır"] },
   { soru: "Efes (Artemis Tapınağı ve Meryem Ana Evi'ne Yakınlığı) (UNESCO)", kategori: "UNESCO", iller: ["İzmir"] },
   { soru: "Ani Arkeolojik Alanı ('1001 Kilise Şehri' - İpek Yolu Üzerinde) (UNESCO)", kategori: "UNESCO", iller: ["Kars"] },
-  { soru: "Afrodisias (Heykeltıraşlık Okulu ve Afrodit Tapınağı) (UNESCO)", kategori: "UNESCO", iller: ["Aydın"] },
+  { soru: "Afrodisias (Heykeltıraşlık Okulu ve Tetrapylon Kapısı) (UNESCO)", kategori: "UNESCO", iller: ["Aydın"] },
   { soru: "Göbeklitepe (Dünyanın Bilinen En Eski Tapınağı) (UNESCO)", kategori: "UNESCO", iller: ["Şanlıurfa"] },
   { soru: "Arslantepe Höyüğü (Bilinen En Eski Devlet Yapılanması ve Bronz İşçiliği İzleri) (UNESCO)", kategori: "UNESCO", iller: ["Malatya"] },
   { soru: "Bintepeler Höyüğü (Lidya Krallarına Ait Dev Tümülüs Mezarları) (UNESCO)", kategori: "UNESCO", iller: ["Manisa"] },
@@ -596,6 +601,9 @@ const TUM_SORULAR = [
 
 // --- ANTİK KENTLER ---
   { soru: "Efes Antik Kenti (Artemis Tapınağı - Dünyanın 7 Harikasından)", kategori: "AntikKentler", iller: ["İzmir"] },
+  { soru: "Ayas Antik Kenti", kategori: "AntikKentler", iller: ["Adana"] },
+  { soru: "Kibyra Antik Kenti", kategori: "AntikKentler", iller: ["Burdur"] },
+  { soru: "Antandros Antik Kenti", kategori: "AntikKentler", iller: ["Balıkesir"] },
   { soru: "Bergama Antik Kenti (Dik Amfitiyatro ve Dünyanın İlk Kütüphanelerinden - Parşömenin İcadı)", kategori: "AntikKentler", iller: ["İzmir"] },
   { soru: "Teos Antik Kenti (Dionysos Tapınağı - İon Birliği'nin Dini Merkezi)", kategori: "AntikKentler", iller: ["İzmir"] },
   { soru: "Truva Antik Kenti (Truva Savaşı ve Tahta At Efsanesi - Homeros'un İlyada'sı)", kategori: "AntikKentler", iller: ["Çanakkale"] },
@@ -634,6 +642,11 @@ const TUM_SORULAR = [
   { soru: "Soli Pompeipolis Antik Kenti (Korsanlara Karşı Roma'nın Kurduğu Liman Kenti)", kategori: "AntikKentler", iller: ["Mersin"] },
   { soru: "Dara Antik Kenti (Bizans-Sasani Sınır Kalesi - Yeraltı Su Sarnıçları)", kategori: "AntikKentler", iller: ["Mardin"] },
   { soru: "Ani Arkeolojik Alanı ('1001 Kilise Şehri' - İpek Yolu Üzerinde)", kategori: "AntikKentler", iller: ["Kars"] },
+  { soru: "Sart Antik Kenti", kategori: "AntikKentler", iller: ["Manisa"] },
+  { soru: "Aigai Antik Kenti", kategori: "AntikKentler", iller: ["Manisa"] },
+  { soru: "Anavarsa Antik Kenti", kategori: "AntikKentler", iller: ["Adana"] },
+  { soru: "Kibyra Antik Kenti", kategori: "AntikKentler", iller: ["Burdur"] },
+  { soru: "Kibyra Antik Kenti", kategori: "AntikKentler", iller: ["Burdur"] },
 
   // --- ÖSYM'NİN EN SEVDİĞİ DİĞER TARİHİ VE KÜLTÜREL YAPILAR ---
   { soru: "İshak Paşa Sarayı (Dünyanın İlk Kalorifer Sistemli Saray Yapısı)", kategori: "KulturTurizmi", iller: ["Ağrı"] },
@@ -741,19 +754,35 @@ function startGameWithKonu() {
     return;
   }
   const filtrelenmis = TUM_SORULAR.filter(s => seciliKonular.includes(s.kategori));
-  sorular = shuffle([...filtrelenmis]);
-  soruIdx = 0; puan = 0; hata = 0; dogru = 0; gecilen = 0; streak = 0; yanlisSorular = [];
+  sonKonuSecimi = seciliKonular;
+  startGameWithSorular(filtrelenmis);
+}
+
+// Verilen soru listesiyle oyunu (yeniden) başlatır. Hem normal konu seçimi
+// hem de "yanlışları tekrar çöz" akışı bu fonksiyonu kullanır.
+function startGameWithSorular(liste) {
+  sorular = shuffle([...liste]);
+  soruIdx = 0; puan = 0; hata = 0; dogru = 0; gecilen = 0; streak = 0;
+  yanlisSorular = []; yanlisSoruObjeleri = [];
   beklemede = false;
   showScreen('screen-game');
   buildMap();
   renderSoru();
 }
 
+// Sonuç ekranındaki "Yanlışları Tekrar Çöz" butonu için: sadece bu oyunda
+// yanlış/gösterilen/geçilen sorulardan oluşan yeni bir tur başlatır.
+function yanlislariTekrarCoz() {
+  if (!yanlisSoruObjeleri || yanlisSoruObjeleri.length === 0) return;
+  startGameWithSorular(yanlisSoruObjeleri);
+}
+
 // ============ OYUN DURUMU ============
 let sorular = [], soruIdx = 0;
 let puan = 0, hata = 0, dogru = 0, gecilen = 0;
 let streak = 0; // ardışık doğru sayısı (sorular arası taşınır)
-let bulunanlar = [], yanlisSorular = [];
+let bulunanlar = [], yanlisSorular = [], yanlisSoruObjeleri = [];
+let sonKonuSecimi = [];
 let beklemede = false;
 
 // ============ MADEN MODU ============
@@ -761,6 +790,12 @@ let beklemede = false;
 // İller haritada gösterilir, kullanıcı madeni seçeneklerden tahmin eder.
 function isMadenModu(s) {
   return s && s.kategori === 'Madenler';
+}
+
+// Bir soruyu "yanlış/gösterilen/geçilen" listesine ekler (tekrar çalışma için).
+function yanlisEkle(s) {
+  if (!yanlisSorular.includes(s.soru)) yanlisSorular.push(s.soru);
+  if (!yanlisSoruObjeleri.some(o => o.soru === s.soru)) yanlisSoruObjeleri.push(s);
 }
 
 // ============ HARİTA ============
@@ -1100,7 +1135,7 @@ function madenTahmin(secilen) {
     updateScores();
     showMapFeedback('❌ Yanlış!', 'err');
     showFeedback(`Yanlış! "${secilen}" değil. Tekrar dene.`, 'err');
-    if (!yanlisSorular.includes(s.soru)) yanlisSorular.push(s.soru);
+    yanlisEkle(s);
 
     // Yanlış butonu işaretle
     document.querySelectorAll('.maden-sec-btn').forEach(btn => {
@@ -1214,6 +1249,7 @@ function ilTiklandi(iladi) {
     wrongAnim(iladi);
     showMapFeedback(`❌ Yanlış İl`, 'err');
     showFeedback(`Yanlış! ${iladi} bu cevabın içinde yer almıyor.`, 'err');
+    yanlisEkle(s);
   }
 }
 function updateScores() {
@@ -1252,7 +1288,7 @@ function updateStrikeBar() {
 function skipSoru() {
   if (beklemede) return;
   const s = sorular[soruIdx];
-  if (!yanlisSorular.includes(s.soru)) yanlisSorular.push(s.soru);
+  yanlisEkle(s);
   streak = 0;
   gecilen++;
   updateScores();
@@ -1266,7 +1302,7 @@ function skipSoru() {
 function revealSoru() {
   if (beklemede) return;
   const s = sorular[soruIdx];
-  if (!yanlisSorular.includes(s.soru)) yanlisSorular.push(s.soru);
+  yanlisEkle(s);
   streak = 0;
   updateScores();
 
@@ -1330,6 +1366,11 @@ function endGame() {
     document.getElementById('yanlis-list').innerHTML = yanlisSorular.map(s => `<li>${s}</li>`).join('');
   } else {
     document.getElementById('yanlis-bolum').style.display = 'none';
+  }
+
+  const tekrarWrap = document.getElementById('yanlis-tekrar-wrap');
+  if (tekrarWrap) {
+    tekrarWrap.style.display = yanlisSoruObjeleri.length ? 'flex' : 'none';
   }
 }
 
