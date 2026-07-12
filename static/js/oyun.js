@@ -135,14 +135,14 @@ const TUM_SORULAR = [
 { soru: "Asfaltit", kategori: "Enerji", iller: ["Şırnak"] },
 { soru: "Doğal Gaz Santralleri", kategori: "Enerji", iller: ["Kırklareli", "İstanbul", "Bursa", "Balıkesir", "İzmir"] },
 { soru: "Doğal Gaz Yatağı", kategori: "Enerji", iller: ["Mardin", "Kırklareli", "Düzce"] },
-{ soru: "Güneş Santrali", kategori: "Enerji", iller: ["Konya", "Şanlıurfa", "Denizli", "Kayseri", "Mersin", "Antalya"] },
+{ soru: "Güneş Santrali", kategori: "Enerji", iller: ["Konya", "Kayseri", "Denizli", "Mersin", "Antalya", "Burdur", "Denizli", "Balıkesir", "Ankara"] },
 { soru: "Jeotermal Santraller", kategori: "Enerji", iller: ["Aydın", "Denizli", "Manisa", "Çanakkale", "İzmir", "Afyon"] },
 { soru: "Taş Kömürü Santralleri", kategori: "Enerji", iller: ["Zonguldak", "Adana"] },
 { soru: "Taş Kömürü Yatakları", kategori: "Enerji", iller: ["Zonguldak", "Bartın", "Kastamonu"] },
 { soru: "Linyit Kömürü Yatakları", kategori: "Enerji", iller: ["Kahramanmaraş", "Ankara", "Çanakkale", "Muğla", "Manisa", "Kütahya", "Bursa", "Çorum", "Amasya", "Sivas", "Erzurum"] },
 { soru: "Petrol Rafinerileri", kategori: "Enerji", iller: ["Batman", "İzmir", "Kırıkkale", "Kocaeli", "Mersin"] },
 { soru: "Petrol Yatakları", kategori: "Enerji", iller: ["Batman", "Siirt", "Diyarbakır", "Şanlıurfa", "Adıyaman"] },
-{ soru: "Rüzgar Gücü Santralleri", kategori: "Enerji", iller: ["İzmir", "Balıkesir", "Manisa", "Mersin", "Hatay", "Kayseri", "Çanakkale", "Aydın", "Afyon", "Amasya", "Kırşehir"] },
+{ soru: "Rüzgar Gücü Santralleri", kategori: "Enerji", iller: ["İzmir", "Balıkesir", "Manisa", "Aydın", "Çanakkale",  "Mersin", "Hatay","Kayseri", "Afyon", "İstanbul"] },
 { soru: "Hidrolik Enerji", kategori: "Enerji", iller: ["Artvin", "Elazığ", "Diyarbakır", "Samsun", "Antalya", "Şanlıurfa"] },
 
   // --- HAYVANCILIK ---
@@ -352,25 +352,32 @@ const TUM_SORULAR = [
   { soru: "Hisarönü Körfezi", kategori: "Diğer", iller: ["Muğla"] },
 
   // --- SANAYİ ---
-  { soru: "Tuğla - Kiremit Üretimi", kategori: "Sanayi", iller: ["Çorum", "Eskişehir", "Afyon", "Kütahya"] },
-  { soru: "Seramik Üretimi", kategori: "Sanayi", iller: ["Kütahya", "Çanakkale", "İzmir", "Bilecik"] },
-  { soru: "Pamuklu Dokuma Sanayi", kategori: "Sanayi", iller: ["Adana", "İzmir", "Denizli", "Aydın", "Antalya"] },
-  { soru: "Şeker Sanayi", kategori: "Sanayi", iller: ["Kırklareli", "Uşak", "Konya", "Ankara", "Yozgat"] },
+  { soru: "Tuğla - Kiremit Üretimi", kategori: "Sanayi", iller: ["Çorum", "Amasya", "Yozgat", "Kütahya", "Eskişehir", "Kütahya", "Afyon", "Uşak", "İzmir"] },
+  { soru: "Gübre Fabrikaları", kategori: "Sanayi", iller: ["Kocaeli", "Bursa", "Balıkesir", "Kütahya", "İzmir", "Mersin", "Hatay", "Mardin", "Sivas", "Samsun"] },
+  { soru: "Mobilya Üretimi", kategori: "Sanayi", iller: ["Kayseri", "Kırıkkale", "Ankara", "İstanbul", "Bursa", "İzmir"] },
+  { soru: "Seramik Üretimi", kategori: "Sanayi", iller: ["Kütahya", "Eskişehir", "Bilecik", "İstanbul", "Çanakkale", "İzmir"] },
+  { soru: "Pamuklu Dokuma Sanayi", kategori: "Sanayi", iller: ["Kocaeli", "Uşak", "Manisa", "Muğla", "Denizli", "Isparta", "Sivas", "Kayseri", "Muş", "Siirt"] },
+  { soru: "Halı Kilim Sanayi", kategori: "Sanayi", iller: ["İstanbul", "Bursa", "Manisa", "İzmir", "Aydın", "Denizli", "Antalya", "Adana", "Gaziantep", "Kayseri"] },
+  { soru: "Şeker Sanayi (Kıyılar ve GDA hariç her yerde var. (Çarşamba Ovası istisna)", kategori: "Sanayi", iller: ["Konya",] },
   { soru: "Ayçiçeği Yağı Sanayi", kategori: "Sanayi", iller: ["Tekirdağ", "Edirne"] },
   { soru: "Zeytinyağı Sanayi", kategori: "Sanayi", iller: ["Aydın", "İzmir", "Balıkesir", "Bursa"] },
   { soru: "Mısırözü Yağı Sanayi", kategori: "Sanayi", iller: ["Adana"] },
   { soru: "Unlu Mamuller Sanayi", kategori: "Sanayi", iller: ["Konya", "Eskişehir", "Ankara"] },
-  { soru: "Et Kombineleri", kategori: "Sanayi", iller: ["Erzurum", "Kars", "Konya", "İzmir", "Balıkesir"] },
+  { soru: "Et Kombinaları", kategori: "Sanayi", iller: ["Erzurum", "Kars","Diyarbakır", "Konya", "İzmir", "Balıkesir"] },
   { soru: "Çay Sanayi", kategori: "Sanayi", iller: ["Rize", "Trabzon"] },
   { soru: "Deniz Mahsulleri Sanayi", kategori: "Sanayi", iller: ["Çanakkale", "Trabzon", "İzmir"] },
   { soru: "Orman Ürünleri / Kereste Sanayi", kategori: "Sanayi", iller: ["Kastamonu", "Düzce", "Bolu", "Giresun", "Zonguldak"] },
-  { soru: "Kağıt Sanayi", kategori: "Sanayi", iller: ["Giresun", "Kastamonu", "Zonguldak", "Muğla", "Mersin"] },
-  { soru: "Otomotiv Sanayisi", kategori: "Sanayi", iller: ["Bursa", "Kocaeli", "Sakarya", "İstanbul", "İzmir", "Aksaray"] },
-  { soru: "Savunma Sanayisi", kategori: "Sanayi", iller: ["Ankara", "Kırıkkale", "Eskişehir"] },
-  { soru: "Demiryolu Araçları Sanayisi (Vagon/Lokomotif)", kategori: "Sanayi", iller: ["Eskişehir", "Sakarya", "Sivas", "Ankara"] },
-  { soru: "Cam Sanayisi", kategori: "Sanayi", iller: ["Kırklareli", "Mersin", "Bursa", "Eskişehir", "Sinop"] },
+  { soru: "Kağıt Sanayi", kategori: "Sanayi", iller: ["Giresun", "Kastamonu", "Zonguldak", "Kocaeli", "Balıkesir", "Afyon", "Muğla", "Mersin"] },
+  { soru: "Otomotiv Sanayisi", kategori: "Sanayi", iller: ["Bursa", "Kocaeli", "Sakarya", "İstanbul", "Eskişehir", "Ankara", "Aksaray", "Konya", "Adana", "İzmir"] },
+  { soru: "Demiryolu Araçları Sanayisi (Vagon/Lokomotif)", kategori: "Sanayi", iller: ["İstanbul", "Bursa", "Sakarya", "Eskişehir", "Ankara", "Sivas", "Adana"] },
+  { soru: "Cam Sanayisi", kategori: "Sanayi", iller: ["Kırklareli","Tekirdağ","İstanbul", "Sinop", "Ankara", "Eskişehir", "Mersin"] },
   { soru: "Demir-Çelik Sanayisi", kategori: "Sanayi", iller: ["Karabük", "Zonguldak", "Hatay", "Sivas", "İzmir"] },
   { soru: "Petrol Kimya (Petrokimya) Tesisleri", kategori: "Sanayi", iller: ["İzmir", "Kocaeli"] },
+  { soru: "Beyaz Eşya Sanayii", kategori: "Sanayi", iller: ["İstanbul", "Bursa", "Manisa", "İzmir", "Ankara", "Kayseri", "Gaziantep"] },
+  { soru: "Deri İşleme", kategori: "Sanayi", iller: ["Tekirdağ", "İstanbul", "Bolu", "Bursa", "Uşak", "İzmir"] },
+  { soru: "Deterjan Üretimi", kategori: "Sanayi", iller: ["İstanbul", "Kocaeli", "Balıkesir", "İzmir", "Ankara", "Adana", "Gaziantep"] },
+  { soru: "Hazır Giyim Tekstil Fabrikaları", kategori: "Sanayi", iller: ["İstanbul", "Kocaeli", "Bursa", "İzmir","Adana"] },
+  { soru: "İpekli Dokuma Fabrikaları", kategori: "Sanayi", iller: ["İstanbul", "Bursa","Adana"] },
 
   // --- ENDEMİK BİTKİLER ---
 { soru: "Sığla (Günlük) Ağacı (Endemik)", kategori: "Endemik", iller: ["Muğla"] }, // Kozmetik ve Eczacılıkta kullanılır, relikt (kalıntı) ağaçtır.
@@ -386,7 +393,11 @@ const TUM_SORULAR = [
   // Ulaşım bağlantıları ve deniz üzeri yapılar harita üzerinde çok sorulur.
   { soru: "Deniz Doldurularak Yapılan Havalimanları", kategori: "Ulasim", iller: ["Ordu", "Giresun", "Rize", "Artvin"] },
   { soru: "Yüksek Hızlı Tren (YHT) Bağlantısı Olan İller", kategori: "Ulasim", iller: ["Ankara", "Eskişehir", "Konya", "İstanbul", "Karaman", "Sivas", "Yozgat", "Kırıkkale", "Bilecik", "Sakarya", "Kocaeli"] },
-  { soru: "Demiryolu Bağlantısı Olmayan Önemli Limanlar", kategori: "Ulasim", iller: ["Trabzon", "Antalya", "Muğla", "Rize", "Sinop"] },
+{
+  "soru": "Demiryolu Bağlantısı Olmayan İller",
+  "kategori": "Ulasim",
+  "iller": ["Bursa", "Çanakkale", "Antalya", "Muğla", "Trabzon", "Rize", "Sinop"]
+},
 // --- ULAŞIM (Otoyol Ağları) ---
   {
     soru: "Türkiye'deki Ana Otoyol Ağlarının (TEM, İstanbul-İzmir, Ankara-Niğde, Kuzey Marmara) Geçtiği İller",
@@ -475,12 +486,12 @@ const TUM_SORULAR = [
   { soru: "Nemrut Kalderası (Ramsar)", kategori: "Ramsar", iller: ["Bitlis"] },
 
   // --- GEÇİTLER ---
-  { soru: "Çubuk Geçidi", kategori: "Gecitler", iller: ["Antalya", "Burdur"] },
+  { soru: "Çubuk (Çeltikçi) Geçidi", kategori: "Gecitler", iller: ["Antalya", "Burdur"] },
   { soru: "Sertavul Geçidi", kategori: "Gecitler", iller: ["Mersin", "Karaman"] },
   { soru: "Gülek Boğazı", kategori: "Gecitler", iller: ["Adana", "Niğde"] },
   { soru: "Belen Geçidi", kategori: "Gecitler", iller: ["Hatay"] },
   { soru: "Zigana (Kalkanlı) Geçidi", kategori: "Gecitler", iller: ["Trabzon", "Gümüşhane"] },
-  { soru: "Kop Geçidi", kategori: "Gecitler", iller: ["Bayburt", "Erzurum"] },
+  { soru: "Kop (Çimen) Geçidi", kategori: "Gecitler", iller: ["Bayburt", "Erzurum"] },
   { soru: "Ovit Tüneli / Geçidi", kategori: "Gecitler", iller: ["Rize", "Erzurum"] },
   { soru: "Cankurtaran Geçidi", kategori: "Gecitler", iller: ["Artvin"] },
   { soru: "Ilgaz Geçidi", kategori: "Gecitler", iller: ["Kastamonu", "Çankırı"] },
@@ -491,8 +502,9 @@ const TUM_SORULAR = [
   { soru: "Çamlıbel Geçidi", kategori: "Gecitler", iller: ["Tokat", "Sivas"] },
   { soru: "Buğlan Geçidi", kategori: "Gecitler", iller: ["Bingöl", "Muş"] },
   { soru: "Alacabel Geçidi", kategori: "Gecitler", iller: ["Antalya", "Konya"] },
+  { soru: "Geyve Boğazı", kategori: "Gecitler", iller: ["Sakarya", "Bilecik"] },
 
-  // --- TÜNELLER ---
+  // --- TÜNEL KÖPRÜ---
   { soru: "Ovit Dağı Tüneli", kategori: "Tuneller", iller: ["Erzurum", "Rize"] },
   { soru: "Orhangazi Tüneli (Samanlı Dağı Tüneli)", kategori: "Tuneller", iller: ["Yalova", "Bursa"] },
   { soru: "Nefise Akçelik Tüneli", kategori: "Tuneller", iller: ["Ordu"] },
@@ -501,6 +513,9 @@ const TUM_SORULAR = [
   { soru: "15 Temmuz Ilgaz Tüneli", kategori: "Tuneller", iller: ["Kastamonu", "Çankırı"] },
   { soru: "75. Yıl Selatin Tüneli", kategori: "Tuneller", iller: ["İzmir", "Aydın"] },
   { soru: "Kop Dağı Tüneli", kategori: "Tuneller", iller: ["Erzurum", "Bayburt"] },
+  { soru: "Sabuncubeli Tüneli", kategori: "Tuneller", iller: ["Manisa", "İzmir"] },
+  { soru: "Ağın-Karamağara Köprüsü", kategori: "Tuneller", iller: ["Elazığ"] },
+  { soru: "Nissibi Köprüsü", kategori: "Tuneller", iller: ["Adıyaman", "Şanlıurfa"] },
 
   // --- TURİZM ---
   { soru: "Elmadağ (Kış Turizmi)", kategori: "Turizm", iller: ["Ankara"] },
