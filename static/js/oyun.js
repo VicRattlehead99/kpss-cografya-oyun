@@ -246,6 +246,7 @@ const TUM_SORULAR = [
   { soru: "Alaşehir Ovası (BAF Tektonik)", kategori: "Ovalar", iller: ["Manisa"] },
   { soru: "Küçük Menderes Ovası (BAF Tektonik)", kategori: "Ovalar", iller: ["İzmir"] },
   { soru: "Büyük Menderes Ovası (BAF Tektonik)", kategori: "Ovalar", iller: ["Aydın"] },
+  { soru: "Pasinler Ovası (Tektonik)", kategori: "Ovalar", iller: ["Erzurum"] },
 
   // --- AKARSULAR VE ŞELALELER ---
 // AKARSULAR
@@ -520,11 +521,17 @@ const TUM_SORULAR = [
   // --- TURİZM ---
   { soru: "Elmadağ (Kış Turizmi)", kategori: "Turizm", iller: ["Ankara"] },
   { soru: "Saklıkent (Kış Turizmi)", kategori: "Turizm", iller: ["Antalya"] },
-  { soru: "Davras (Kış Turizmi)", kategori: "Turizm", iller: ["Isparta"] },
+  { soru: "Davraz (Kış Turizmi)", kategori: "Turizm", iller: ["Isparta"] },
   { soru: "Ladik (Kış Turizmi)", kategori: "Turizm", iller: ["Samsun"] },
   { soru: "Kartepe (Kış Turizmi)", kategori: "Turizm", iller: ["Kocaeli"] },
   { soru: "Bozdağlar (Kış Turizmi)", kategori: "Turizm", iller: ["İzmir"] },
   { soru: "Ergan Dağı (Kış Turizmi)", kategori: "Turizm", iller: ["Erzincan"] },
+  { soru: "Esentepe (Kış Turizmi)", kategori: "Turizm", iller: ["Bolu"] },
+  { soru: "Kartalkaya (Kış Turizmi)", kategori: "Turizm", iller: ["Bolu"] },
+  { soru: "Zigana (Kış Turizmi)", kategori: "Turizm", iller: ["Gümüşhane"] },
+  { soru: "Hazarbaba (Kış Turizmi)", kategori: "Turizm", iller: ["Elazığ"] },
+  { soru: "Yıldız Dağı (Kış Turizmi)", kategori: "Turizm", iller: ["Sivas"] },
+  { soru: "Tavas (Kış Turizmi)", kategori: "Turizm", iller: ["Denizli"] },
   { soru: "Meryem Ana (Hz. İsa'nın Annesi Meryem'in Son Yaşadığına İnanılan Ev)", kategori: "Turizm", iller: ["İzmir"] },
   { soru: "Demre / St. Nicolas Kilisesi (Noel Baba'nın / Aziz Nikolaos'un Yaşadığı ve Gömülü Olduğu Kilise)", kategori: "Turizm", iller: ["Antalya"] },
   { soru: "St. Pierre (Hristiyanlığın İlk Yeraltı / Mağara Kilisesi)", kategori: "Turizm", iller: ["Hatay"] },
