@@ -278,6 +278,12 @@ h1 {
   padding: 14px;
   overflow-y: auto;
 }
+.qa-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
 .question-card {
   background: var(--bg3);
   border: 1px solid var(--border);
@@ -369,7 +375,7 @@ h1 {
 
 /* LEGEND */
 .legend {
-  margin-top: auto;
+  margin-top: 14px;
   display: flex;
   flex-direction: column;
   gap: 5px;
