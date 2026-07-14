@@ -230,19 +230,21 @@
 
     <div class="game-body">
       <div class="left-panel">
-        <div class="question-card">
-          <div class="q-cat" id="q-cat">Kategori</div>
-          <div class="q-text" id="q-text">Yükleniyor...</div>
-          <div class="q-hint">Listede olan illerden herhangi birine tıkla</div>
+        <div class="qa-block">
+          <div class="question-card">
+            <div class="q-cat" id="q-cat">Kategori</div>
+            <div class="q-text" id="q-text">Yükleniyor...</div>
+            <div class="q-hint">Listede olan illerden herhangi birine tıkla</div>
+          </div>
+          <div class="sira-list" id="sira-list"></div>
+          <div class="action-row">
+            <button class="btn-action btn-menu" onclick="anaMenuye()">🏠 Menü</button>
+            <button class="btn-action" id="btn-tekrar" onclick="soruyuTekrarla()">🔄 Tekrar</button>
+            <button class="btn-action" id="btn-reveal" onclick="revealSoru()">👁 Göster</button>
+            <button class="btn-action btn-next" id="btn-next" onclick="sonrakiSoru()" style="display:none">Sonraki ▶</button>
+          </div>
+          <div class="feedback-panel" id="feedback-panel"></div>
         </div>
-        <div class="sira-list" id="sira-list"></div>
-        <div class="action-row">
-          <button class="btn-action btn-menu" onclick="anaMenuye()">🏠 Menü</button>
-          <button class="btn-action" id="btn-tekrar" onclick="soruyuTekrarla()">🔄 Tekrar</button>
-          <button class="btn-action" id="btn-reveal" onclick="revealSoru()">👁 Göster</button>
-          <button class="btn-action btn-next" id="btn-next" onclick="sonrakiSoru()" style="display:none">Sonraki ▶</button>
-        </div>
-        <div class="feedback-panel" id="feedback-panel"></div>
         <div class="legend">
           <div class="leg-item"><span class="leg-dot g3"></span>Bulunan İl (10p)</div>
           <div class="leg-item"><span class="leg-dot blue"></span>Gösterilen İl</div>
