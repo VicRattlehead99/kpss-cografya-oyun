@@ -121,7 +121,7 @@ const TUM_SORULAR = [
   { soru: "Zindan Mağarası", kategori: "Magara", iller: ["Isparta"] },
   { soru: "Tilkiler Mağarası", kategori: "Magara", iller: ["Antalya"] },
   { soru: "Ayvaini Mağarası", kategori: "Magara", iller: ["Bursa"] },
-  { soru: "Suluin Mağarası", kategori: "Magara", iller: ["Antakya"] },
+  { soru: "Suluin Mağarası", kategori: "Magara", iller: ["Antalya"] },
   { soru: "Ilgarini Mağarası", kategori: "Magara", iller: ["Kastamonu"] },
   { soru: "İncirliin Mağarası", kategori: "Magara", iller: ["Muğla"] },
   { soru: "Keloğlan Mağarası", kategori: "Magara", iller: ["Denizli"] },
