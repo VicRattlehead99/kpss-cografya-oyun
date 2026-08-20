@@ -365,62 +365,61 @@ const TUM_SORULAR = [
 { soru: "Sızır Şelalesi", kategori: "Selale", iller: ["Sivas"] },
 
 // --- GÖLLER ---
-{ soru: "Manyas (Kuş) Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Balıkesir"] }, // Karadere aracılığıyla Susurluk Çayı'na boşalır.
-{ soru: "Uluabat Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Bursa"] }, // Uluabat Deresi ile Mustafakemalpaşa Çayı/Susurluk'a bağlanır.
-{ soru: "İznik Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Bursa"] }, // Gideğeni (Garsak Deresi) vardır, Marmara Denizi'ne dökülür.
-{ soru: "Sapanca Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Sakarya"] }, // Çark Deresi vasıtasıyla Sakarya Nehri'ne boşalır.
-{ soru: "Eğirdir Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Isparta"] }, // Kovada Kanalı ile sularını Kovada Gölü'ne akıtır.
-{ soru: "Beyşehir Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Konya", "Isparta"] }, // Beyşehir Çayı (gideğeni) ile sularını sular, tatlı sudur.
-{ soru: "Akşehir Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Konya", "Afyon"] }, // Kapalı havzadır, gideğeni yoktur (tuzlu/acı).
-{ soru: "Eber Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Afyon"] }, // Sularını bir kanalla Akşehir Gölü'ne gönderir, gideğeni vardır.
-{ soru: "Tuz Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Konya", "Aksaray", "Ankara"] }, // Net bir kapalı havzadır, gideğeni yoktur.
-{ soru: "Seyfe Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Kırşehir"] }, // Kapalı havzadır, gideğeni yoktur.
-{ soru: "Hazar Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Elazığ"] }, // Dicle Nehri'nin kaynaklarından birini oluşturur, gideğeni vardır.
-{ soru: "Sera Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Trabzon"] }, // Sera Deresi vadisinde oluşmuştur, sularını Karadeniz'e ulaştırır.
-{ soru: "Aktaş Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Ardahan"] }, // Kapalı havza özelliği taşır, net bir açık akarı yoktur.
-{ soru: "Ilgın Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Konya"] }, // Çavuşçu Gölü olarak da bilinir, gideğeni (doğal/yapay kanalları) vardır.
-{ soru: "Işıklı Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Denizli"] }, // Büyük Menderes Nehri'ni besleyen ana gideğenlerden biridir.
-{ soru: "Acıgöl (Tektonik) ❌", kategori: "Göller", iller: ["Afyon", "Denizli"] }, // Suları dışarıya akmadığı için yüksek oranda sodyum sülfat içerir, gideğeni yoktur.
-{ soru: "Salda Gölü (Karstik) ❌", kategori: "Göller", iller: ["Burdur"] }, // Dışarıya akışı olmayan kapalı bir karstik havzadır.
-{ soru: "Kestel Gölü (Karstik) ❌", kategori: "Göller", iller: ["Burdur"] }, // Doğal bir gideğeni yoktur (geçmişte düdenlerle yer altına batardı).
-{ soru: "Avlan Gölü (Karstik) ❌", kategori: "Göller", iller: ["Antalya"] }, // Karstik kapalı havzadır, gideğeni yoktur.
-{ soru: "Suğla Gölü (Karstik) ✅", kategori: "Göller", iller: ["Konya"] }, // Beyşehir'den gelen suları alır ve fazla suyunu kurutma kanalları/gideğenle tahliye eder.
-{ soru: "Hafik Gölü (Karstik) ✅", kategori: "Göller", iller: ["Sivas"] }, // Kızılırmak'a bağlanan bir gideğeni (göl ayağı) mevcuttur.
-{ soru: "Kovada Gölü (Karstik) ✅", kategori: "Göller", iller: ["Isparta"] }, // Kovada Çayı ile sularını dışarıya akıtır, açık havzadır.
-{ soru: "Meke Maar Gölü (Volkanik) ❌", kategori: "Göller", iller: ["Konya"] }, // Gaz patlamasıyla oluşmuş kapalı bir maardır, gideğeni yoktur.
-{ soru: "Acıgöl Maar Gölü (Volkanik) ❌", kategori: "Göller", iller: ["Konya"] }, // Meke yakınlarındaki acı göldür, gideğeni yoktur.
-{ soru: "Nemrut Krater Gölü (Volkanik) ❌", kategori: "Göller", iller: ["Bitlis"] }, // Kaldera içinde kalmıştır, dışarıya akışı yoktur.
-{ soru: "Abant Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Bolu"] }, // Abant Deresi adında bir gideğeni vardır.
-{ soru: "Yedigöller (Heyelan Set) ✅", kategori: "Göller", iller: ["Bolu"] }, // Göller birbirine sızıntı ve derelerle bağlıdır, dışarıya akışları vardır.
-{ soru: "Borabay Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Amasya"] }, // Borabay Deresi adıyla dışarıya akışı vardır.
-{ soru: "Zinav Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Tokat"] }, // Zinav Deresi aracılığıyla Yeşilırmak'ın kollarına boşalır.
-{ soru: "Tortum Gölü (Heyelan Set) ✅", kategori: "Göller", iller: ["Erzurum"] }, // Tortum Çayı gölden çıkarak ünlü Tortum Şelalesi'ni oluşturur.
-{ soru: "Çıldır Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Ardahan", "Kars"] }, // Telek Çayı (Arpaçay'ın kolu) adında bir gideğeni vardır.
-{ soru: "Balık Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Ağrı"] }, // Sularını bir dere vasıtasıyla Murat Nehri'ne ulaştırır.
-{ soru: "Haçlı Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Muş"] }, // Şeyhpir Deresi aracılığıyla Murat Nehri'ne boşalır.
-{ soru: "Nazik Gölü (Volkanik Set) ✅", kategori: "Göller", iller: ["Bitlis"] }, // Sularını bir gideğen kanalıyla Van Gölü'ne ulaştırır.
-{ soru: "Van Gölü (Volkanik Set) ❌", kategori: "Göller", iller: ["Van", "Bitlis"] }, // Dünyanın en büyük sodalı gölüdür, dışarıya akışı (gideğeni) yoktur.
-{ soru: "Erçek Gölü (Volkanik Set) ❌", kategori: "Göller", iller: ["Van"] }, // Dışarıya akışı olmayan kapalı, doğu Anadolu havzası gölüdür.
-{ soru: "Gala Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Edirne"] }, // Meriç Nehri delta sistemine bağlıdır, kanallarla nehre/denize açılır.
-{ soru: "Marmara Gölü (Alüvyal Set) ❌", kategori: "Göller", iller: ["Manisa"] }, // Doğal bir dışa akışı yoktur, son yıllarda tamamen kuruma noktasına gelmiştir.
-{ soru: "Bafa Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Aydın", "Muğla"] }, // Büyük Menderes Nehri ile bir bağlantı (gideğen/kanal) hattı vardır.
-{ soru: "Köyceğiz Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Muğla"] }, // Dalyan Kanalı aracılığıyla Akdeniz'e bağlanır.
-{ soru: "Eymir Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Ankara"] }, // Fazla sularını Mogan Gölü'nden alır ve İmrahor Vadisi'ne doğru gideğenle verir.
-{ soru: "Mogan Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Ankara"] }, // Sularını bir kanalla (gideğenle) Eymir Gölü'ne akıtır.
-{ soru: "Simenlik Gölü (Alüvyal Set) ✅", kategori: "Göller", iller: ["Samsun"] }, // Yeşilırmak deltası üzerindedir, Karadeniz'e bağlantılı kolları vardır.
-{ soru: "Terkos (Durusu) Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["İstanbul"] }, // Fazla suları eskiden Karadeniz'e akan bir gideğene sahipti (şu an baraj kapağı/taşkın kanalı kontrollü).
-{ soru: "Küçükçekmece Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["İstanbul"] }, // Denizle doğrudan bağlantısı (boğazı/gideğeni) vardır.
-{ soru: "Büyükçekmece Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["İstanbul"] }, // Denizle lagün ağzı bağlantısı (gideğeni) vardır.
-{ soru: "Balık Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["Samsun"] }, // Kızılırmak deltası göllerindendir, denize bağlanan kanalları vardır.
-{ soru: "Akyatan Gölü (Kıyı Set) ✅", kategori: "Göller", iller: ["Adana"] }, // Seyhan/Ceyhan deltası lagünüdür, Akdeniz'e açılan bağlantı kanalı bulunur.
-// --- ÖSYM'NİN SEVDİĞİ EKSTRA KRİTİK GÖLLER ---
-{ soru: "Burdur Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Burdur", "Isparta"] }, // Göller Yöresi'nin en net kapalı havzasıdır, suları arsenikli ve acıdır.
-{ soru: "Ladik Gölü (Tektonik) ✅", kategori: "Göller", iller: ["Samsun"] }, // Kuzey Anadolu Fay Hattı üzerinde oluşmuştur, Tersakan Çayı ile dışa akışı vardır.
-{ soru: "Uzungöl (Heyelan Set) ✅", kategori: "Göller", iller: ["Trabzon"] }, // Haldizen Deresi'nin önünün kapanmasıyla oluşmuştur, Solaklı Deresi ile açık havzadır.
-{ soru: "Gölcük Gölü - Isparta (Volkanik) ❌", kategori: "Göller", iller: ["Isparta"] }, // Bir maar/krater gölüdür, dışa akışı olmayan kapalı havzadır.
-{ soru: "Yay Gölü (Tektonik) ❌", kategori: "Göller", iller: ["Kayseri"] }, // Sultan Sazlığı'nın merkezinde yer alan kapalı havza gölüdür.
-{ soru: "Dil Gölü / Karine Lagünü (Kıyı Set) ✅", kategori: "Göller", iller: ["Aydın"] }, // Büyük Menderes deltasında yer alır, Ege Denizi ile bağlantılıdır.
-
+{ soru: "Timraş (Gökhöyük) Gölü (Karstik)", kategori: "Göller", iller: ["Konya"] },
+{ soru: "Yarışlı Gölü (Karstik)", kategori: "Göller", iller: ["Burdur"] },
+{ soru: "Manyas (Kuş) Gölü (Tektonik)", kategori: "Göller", iller: ["Balıkesir"] },
+{ soru: "Uluabat Gölü (Tektonik)", kategori: "Göller", iller: ["Bursa"] },
+{ soru: "İznik Gölü (Tektonik)", kategori: "Göller", iller: ["Bursa"] },
+{ soru: "Sapanca Gölü (Tektonik)", kategori: "Göller", iller: ["Sakarya"] },
+{ soru: "Eğirdir Gölü (Tektonik)", kategori: "Göller", iller: ["Isparta"] },
+{ soru: "Beyşehir Gölü (Tektonik)", kategori: "Göller", iller: ["Konya", "Isparta"] },
+{ soru: "Akşehir Gölü (Tektonik)", kategori: "Göller", iller: ["Konya", "Afyon"] },
+{ soru: "Eber Gölü (Tektonik)", kategori: "Göller", iller: ["Afyon", "Konya"] },
+{ soru: "Tuz Gölü (Tektonik)", kategori: "Göller", iller: ["Konya", "Aksaray", "Ankara"] },
+{ soru: "Seyfe Gölü (Tektonik)", kategori: "Göller", iller: ["Kırşehir"] },
+{ soru: "Hazar Gölü (Tektonik)", kategori: "Göller", iller: ["Elazığ"] },
+{ soru: "Sera Gölü (Heyelan Set)", kategori: "Göller", iller: ["Trabzon"] },
+{ soru: "Aktaş Gölü (Tektonik)", kategori: "Göller", iller: ["Ardahan"] },
+{ soru: "Ilgın Gölü (Tektonik)", kategori: "Göller", iller: ["Konya"] },
+{ soru: "Işıklı Gölü (Tektonik)", kategori: "Göller", iller: ["Denizli"] },
+{ soru: "Acıgöl (Tektonik)", kategori: "Göller", iller: ["Afyon", "Denizli"] },
+{ soru: "Salda Gölü (Karstik)", kategori: "Göller", iller: ["Burdur"] },
+{ soru: "Kestel Gölü (Karstik)", kategori: "Göller", iller: ["Burdur"] },
+{ soru: "Avlan Gölü (Karstik)", kategori: "Göller", iller: ["Antalya"] },
+{ soru: "Suğla Gölü (Karstik)", kategori: "Göller", iller: ["Konya"] },
+{ soru: "Hafik Gölü (Karstik)", kategori: "Göller", iller: ["Sivas"] },
+{ soru: "Kovada Gölü (Karstik)", kategori: "Göller", iller: ["Isparta"] },
+{ soru: "Meke Maar Gölü (Volkanik)", kategori: "Göller", iller: ["Konya"] },
+{ soru: "Acıgöl Maar Gölü (Volkanik)", kategori: "Göller", iller: ["Nevşehir"] },
+{ soru: "Nemrut Krater Gölü (Volkanik)", kategori: "Göller", iller: ["Bitlis"] },
+{ soru: "Abant Gölü (Heyelan Set)", kategori: "Göller", iller: ["Bolu"] },
+{ soru: "Yedigöller (Heyelan Set)", kategori: "Göller", iller: ["Bolu"] },
+{ soru: "Borabay Gölü (Heyelan Set)", kategori: "Göller", iller: ["Amasya"] },
+{ soru: "Zinav Gölü (Heyelan Set)", kategori: "Göller", iller: ["Tokat"] },
+{ soru: "Tortum Gölü (Heyelan Set)", kategori: "Göller", iller: ["Erzurum"] },
+{ soru: "Çıldır Gölü (Volkanik Set)", kategori: "Göller", iller: ["Ardahan", "Kars"] },
+{ soru: "Balık Gölü (Volkanik Set)", kategori: "Göller", iller: ["Ağrı"] },
+{ soru: "Haçlı Gölü (Volkanik Set)", kategori: "Göller", iller: ["Muş"] },
+{ soru: "Nazik Gölü (Volkanik Set)", kategori: "Göller", iller: ["Bitlis"] },
+{ soru: "Van Gölü (Volkanik Set)", kategori: "Göller", iller: ["Van", "Bitlis"] },
+{ soru: "Erçek Gölü (Volkanik Set)", kategori: "Göller", iller: ["Van"] },
+{ soru: "Gala Gölü (Alüvyal Set)", kategori: "Göller", iller: ["Edirne"] },
+{ soru: "Marmara Gölü (Alüvyal Set)", kategori: "Göller", iller: ["Manisa"] },
+{ soru: "Bafa Gölü (Alüvyal Set)", kategori: "Göller", iller: ["Aydın", "Muğla"] },
+{ soru: "Köyceğiz Gölü (Alüvyal Set)", kategori: "Göller", iller: ["Muğla"] },
+{ soru: "Eymir Gölü (Alüvyal Set)", kategori: "Göller", iller: ["Ankara"] },
+{ soru: "Mogan Gölü (Alüvyal Set)", kategori: "Göller", iller: ["Ankara"] },
+{ soru: "Simenlik Gölü (Alüvyal Set)", kategori: "Göller", iller: ["Samsun"] },
+{ soru: "Terkos (Durusu) Gölü (Kıyı Set)", kategori: "Göller", iller: ["İstanbul"] },
+{ soru: "Küçükçekmece Gölü (Kıyı Set)", kategori: "Göller", iller: ["İstanbul"] },
+{ soru: "Büyükçekmece Gölü (Kıyı Set)", kategori: "Göller", iller: ["İstanbul"] },
+{ soru: "Balık Gölü (Kıyı Set)", kategori: "Göller", iller: ["Samsun"] },
+{ soru: "Akyatan Gölü (Kıyı Set)", kategori: "Göller", iller: ["Adana"] },
+{ soru: "Burdur Gölü (Tektonik)", kategori: "Göller", iller: ["Burdur", "Isparta"] },
+{ soru: "Ladik Gölü (Tektonik)", kategori: "Göller", iller: ["Samsun"] },
+{ soru: "Uzungöl (Heyelan Set)", kategori: "Göller", iller: ["Trabzon"] },
+{ soru: "Yay Gölü (Tektonik-Alüvyal Set)", kategori: "Göller", iller: ["Kayseri"] },
+{ soru: "Dil Gölü / Karine Lagünü (Kıyı Set)", kategori: "Göller", iller: ["Aydın"] },
   // --- DİĞER (Köy Altı Yerleşmeleri, Körfezler) ---
   { soru: "Divan (Köy Altı)", kategori: "Diğer", iller: ["Bolu", "Sakarya", "Zonguldak", "Kastamonu", "Sinop"] },
   { soru: "Dam (Köy Altı)", kategori: "Diğer", iller: ["Muğla", "İzmir", "Aydın", "Çanakkale"] },
@@ -465,19 +464,16 @@ const TUM_SORULAR = [
   { soru: "İpekli Dokuma Fabrikaları", kategori: "Sanayi", iller: ["İstanbul", "Bursa","Adana"] },
 
   // --- ENDEMİK BİTKİLER ---
-{ soru: "Sığla (Günlük) Ağacı", kategori: "Endemik", iller: ["Muğla"] }, // Kozmetik ve Eczacılıkta kullanılır, relikt (kalıntı) ağaçtır.
-{ soru: "Kasnak Meşesi", kategori: "Endemik", iller: ["Isparta", "Burdur"] }, // Özellikle Isparta Eğirdir çevresinde koruma altındadır.
-{ soru: "Kazdağı Göknarı", kategori: "Endemik", iller: ["Balıkesir", "Çanakkale"] }, // Kaz Dağları'na özgü endemik ağaç türü.
-{ soru: "Datça Hurması", kategori: "Endemik", iller: ["Muğla"] }, // Datça ve Teke Yarımadası'na özgü palmiye türü.
-{ soru: "Ters Lale", kategori: "Endemik", iller: ["Hakkâri", "Van"] }, // Ağlayan Gelin olarak bilinir.
-{ soru: "İspir Meşesi", kategori: "Endemik", iller: ["Erzurum", "Yozgat", "Gümüşhane"] }, // İsmini Erzurum'un İspir ilçesinden alır.
-{ soru: "Eber Sarısı", kategori: "Endemik", iller: ["Afyon", "Konya"] }, // Eber ve Akşehir Gölleri çevresinde yetişen baklagil türü.
-{ soru: "Kapadokya Soğanı", kategori: "Endemik", iller: ["Kayseri", "Niğde", "Nevşehir"] }, // Erciyes ve Melendiz Dağları çevresinde yetişir.
-{ soru: "Anzer Çayı", kategori: "Endemik", iller: ["Rize","Artvin"] },
-// --- ÖSYM'NİN SEVDİĞİ EKSTRA KRİTİK ENDEMİKLER ---
-{ soru: "Sevgi Çiçeği", kategori: "Endemik", iller: ["Ankara"] }, // Ankara Gölbaşı çevresine özgüdür, dünyada sadece burada yetişir.
-{ soru: "Marmaris Semizotu", kategori: "Endemik", iller: ["Muğla"] }, // Muğla ve Marmaris çevresindeki kıyı şeridine özgü endemik tür.
-
+{ soru: "Sığla (Günlük) Ağacı", kategori: "Endemik", iller: ["Muğla"] },
+{ soru: "Kasnak Meşesi", kategori: "Endemik", iller: ["Isparta"] },
+{ soru: "Kazdağı Göknarı", kategori: "Endemik", iller: ["Balıkesir", "Çanakkale"] },
+{ soru: "Datça Hurması", kategori: "Endemik", iller: ["Muğla"] },
+{ soru: "Ters Lale", kategori: "Endemik", iller: ["Hakkâri", "Van"] },
+{ soru: "İspir Meşesi", kategori: "Endemik", iller: ["Kastamonu", "Yozgat"] },
+{ soru: "Eber Sarısı", kategori: "Endemik", iller: ["Afyon", "Konya"] },
+{ soru: "Kapadokya Soğanı", kategori: "Endemik", iller: ["Nevşehir"] },
+{ soru: "Anzer Çayı", kategori: "Endemik", iller: ["Rize"] },
+{ soru: "Sevgi Çiçeği", kategori: "Endemik", iller: ["Ankara"] },
     //ULAŞIM
   // Ulaşım bağlantıları ve deniz üzeri yapılar harita üzerinde çok sorulur.
   { soru: "Deniz Doldurularak Yapılan Havalimanları", kategori: "Ulasim", iller: ["Ordu", "Giresun", "Rize", "Artvin"] },
